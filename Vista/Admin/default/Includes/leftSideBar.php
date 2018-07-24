@@ -11,13 +11,13 @@
                     <a href="javascript: void(0);"><i class="icon-people"></i>
                         <span> Administración </span> <span class="menu-arrow"></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="#"><i class="icon-user-follow"></i>Registrar Usuario</a></li>
+                        <li><a href="../default/registrarUsuarios.php"><i class="icon-user-follow"></i>Registrar Usuario</a></li>
                         <li><a href="#"><i class="fa spin fa-refresh"></i>Administrar Usuarios</a></li>
                         <li><a href="#"><i class="icon-note"></i>Registrar Asignatura</a></li>
                         <li><a href="#"><i class="fa spin fa-refresh"></i>Admin Asignaturas</a></li>
                         <li><a href="#"><i class="icon-pencil"></i>Registrar Cursos</a></li>
                         <li><a href="#"><i class="fa spin fa-refresh"></i>Administrar Cursos</a></li>
-                        <li><a href="#"><i class="icon-graduation"></i>Registrar Alumno</a></li>
+                        <li><a href=../default/registrarAlumno.php><i class="icon-graduation"></i>Registrar Alumno</a></li>
                         <li><a href="#"><i class="fa spin fa-refresh"></i>Administrar Alumnos</a></li>
                         <li><a href="#"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                         <li><a href="#"><i class="icon-share-alt"></i>Crear Anuncio</a></li>
