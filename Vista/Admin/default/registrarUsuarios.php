@@ -72,23 +72,23 @@
                                     <div class="row m-t-20">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="firstname1">* Documento</label>
+                                                <label for="Documento">* Documento</label>
                                                 <input type="text" class="form-control" id="Documento" name="Documento" placeholder="Ingrese aquí el No. de Documento">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="username1">* Nombres</label>
+                                                <label for="Nombres">* Nombres</label>
                                                 <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Ingrese aquí el Nombre completo">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="password11">* Email</label>
-                                                <input type="password" class="form-control" id="Email" name="Email" placeholder="direccionEmail@dominio.com">
+                                                <label for="Email">* Email</label>
+                                                <input type="text" class="form-control" id="Email" name="Email" placeholder="direccionEmail@dominio.com">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="username">* Tipo de Documento</label>
+                                                <label for="TipoDocumento">* Tipo de Documento</label>
                                                 <select class="form-control">
                                                     <option>C.C</option>
                                                     <option>C.E</option>
@@ -97,13 +97,13 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="emailaddress1">* Apellidos</label>
+                                                <label for="Apellidos">* Apellidos</label>
                                                 <input type="email" class="form-control" id="Apellidos" name="Apellidos" placeholder="Ingrese aquí los Apellidos">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="password2">* Confirmar Email</label>
-                                                <input type="password" class="form-control" id="password2" placeholder="direccionEmail@dominio.com">
+                                                <label for="ConfirmarEmail">* Confirmar Email</label>
+                                                <input type="text" class="form-control" id="password2" placeholder="direccionEmail@dominio.com">
                                             </div>
                                         </div>
                                     </div>
@@ -116,18 +116,23 @@
                                     <div class="row m-t-20">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="phonenumber1">* Número de Celular</label>
-                                                <input type="text" class="form-control" id="phonenumber1" placeholder="">
+                                                <label for="Numero">* Número de Celular</label>
+                                                <input type="text" class="form-control" id="Numero" name="Numero" placeholder="3xx xxx xxxx">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="address1">* Contraseña</label>
-                                                <input type="password" class="form-control" id="address1" placeholder="">
+                                                <label for="Direccion">* Dirección</label>
+                                                <input type="text" class="form-control" id="Direccion" name="Direccion" placeholder="Calle xx No. xx - xx">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Password">* Contraseña</label>
+                                                <input type="password" class="form-control" id="Password" name="Password" placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="username">* Estado</label>
+                                                <label for="Estado">* Estado</label>
                                                 <select class="form-control">
                                                     <option>Activo</option>
                                                     <option>Inactivo</option>
@@ -135,8 +140,19 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="aboutme1">* Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" id="address1" placeholder="">
+                                                <label for="Cargo">* Cargo</label>
+                                                <select class="form-control">
+                                                    <option>Rector(a)</option>
+                                                    <option>Psicoorientador(a)</option>
+                                                    <option>Coordinador(a)</option>
+                                                    <option>Secretaria</option>
+                                                    <option>Docente</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="ConfirmPassword">* Confirmar Contraseña</label>
+                                                <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="">
                                             </div>
                                         </div>
                                     </div>
