@@ -26,4 +26,9 @@
 <script src="assets/js/jquery.core.js"></script>
 <script src="assets/js/jquery.app.js"></script>
 
+<!--Form Wizard-->
+<script src="../plugins/jquery.stepy/jquery.stepy.min.js" type="text/javascript"></script>
+<!--wizard initialization-->
+<script src="assets/pages/jquery.wizard-init.js" type="text/javascript"></script>
+
 <!-- END INCLUDES SCRIPTS -->

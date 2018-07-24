@@ -39,19 +39,7 @@
 
                 <!-- start row -->
                 <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <h4 class="page-title float-left">Sistema de Gestión de Procesos Academicos Institución Educativa Técnica de Nazareth Nobsa.</h4>
 
-                            <ol class="breadcrumb float-right">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Dashboard 1</li>
-                            </ol>
-
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
                 </div>
                 <!-- end row -->
 

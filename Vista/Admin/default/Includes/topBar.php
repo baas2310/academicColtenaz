@@ -67,6 +67,11 @@
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <i class="mdi mdi-settings"></i> <span>Ajustes de Perfil</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <i class="mdi mdi-power"></i> <span>Cerrar Sesión</span>
                     </a>
 
