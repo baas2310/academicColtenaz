@@ -37,7 +37,7 @@ if (!empty($_SESSION['idRol'])){
 <body class="bg-accpunt-pages">
 
 <!-- HOME -->
-<section style="background-color: rgb(12,148,14)">
+<section style="background-color: #4bd396">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
