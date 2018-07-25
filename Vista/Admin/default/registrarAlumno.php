@@ -83,7 +83,7 @@
 
                                             <div class="form-group">
                                                 <label for="Email">* Email</label>
-                                                <input type="text" class="form-control" id="Email" name="Email" placeholder="direccionEmail@dominio.com">
+                                                <input type="email" class="form-control" id="Email" name="Email" placeholder="direccionEmail@dominio.com">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -97,12 +97,12 @@
 
                                             <div class="form-group">
                                                 <label for="Apellidos">* Apellidos</label>
-                                                <input type="email" class="form-control" id="Apellidos" name="Apellidos" placeholder="Ingrese aquí los Apellidos">
+                                                <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Ingrese aquí los Apellidos">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="ConfirmarEmail">* Confirmar Email</label>
-                                                <input type="text" class="form-control" id="password2" placeholder="direccionEmail@dominio.com">
+                                                <input type="email" class="form-control" id="password2" placeholder="direccionEmail@dominio.com">
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
 
                                             <div class="form-group">
                                                 <label for="Email">* Email</label>
-                                                <input type="text" class="form-control" id="Email" name="Email" placeholder="direccionEmail@dominio.com">
+                                                <input type="email" class="form-control" id="Email" name="Email" placeholder="direccionEmail@dominio.com">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -141,12 +141,12 @@
 
                                             <div class="form-group">
                                                 <label for="Apellidos">* Apellidos</label>
-                                                <input type="email" class="form-control" id="Apellidos" name="Apellidos" placeholder="Ingrese aquí los Apellidos">
+                                                <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Ingrese aquí los Apellidos">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="ConfirmarEmail">* Confirmar Email</label>
-                                                <input type="text" class="form-control" id="password2" placeholder="direccionEmail@dominio.com">
+                                                <input type="email" class="form-control" id="password2" placeholder="direccionEmail@dominio.com">
                                             </div>
                                         </div>
                                     </div>
