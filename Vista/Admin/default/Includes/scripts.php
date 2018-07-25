@@ -47,4 +47,10 @@
 <script src="../plugins/datatables/dataTables.responsive.min.js"></script>
 <script src="../plugins/datatables/responsive.bootstrap4.min.js"></script>
 
+<!--FooTable-->
+<script src="../plugins/footable/js/footable.all.min.js"></script>
+
+<!--FooTable Example-->
+<script src="assets/pages/jquery.footable.js"></script>
+
 <!-- END INCLUDES SCRIPTS -->

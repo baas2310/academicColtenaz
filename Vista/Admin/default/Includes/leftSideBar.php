@@ -12,11 +12,11 @@
                         <span> Administración </span> <span class="menu-arrow"></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="../default/registrarUsuarios.php"><i class="icon-user-follow"></i>Registrar Usuario</a></li>
-                        <li><a href="#"><i class="fa spin fa-refresh"></i>Administrar Usuarios</a></li>
+                        <li><a href="../default/adminUsuarios.php"><i class="fa spin fa-refresh"></i>Administrar Usuarios</a></li>
                         <li><a href="../default/adminAsignaturas.php"><i class="icon-note"></i>Admin Asignaturas</a></li>
                         <li><a href="../default/adminCursos.php"><i class="icon-pencil"></i>Administrar Cursos</a></li>
-                        <li><a href=../default/registrarAlumno.php><i class="icon-graduation"></i>Registrar Alumno</a></li>
-                        <li><a href="#"><i class="fa spin fa-refresh"></i>Administrar Alumnos</a></li>
+                        <li><a href="../default/registrarAlumno.php"><i class="icon-graduation"></i>Registrar Alumno</a></li>
+                        <li><a href="../default/adminAlumnos.php"><i class="fa spin fa-refresh"></i>Administrar Alumnos</a></li>
                         <li><a href="#"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                         <li><a href="#"><i class="icon-share-alt"></i>Crear Anuncio</a></li>
                     </ul>
