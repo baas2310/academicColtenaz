@@ -47,10 +47,39 @@
 <script src="../plugins/datatables/dataTables.responsive.min.js"></script>
 <script src="../plugins/datatables/responsive.bootstrap4.min.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#datatable').DataTable();
+
+        //Buttons examples
+        var table = $('#datatable-buttons').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'colvis']
+        });
+
+        table.buttons().container()
+            .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+    } );
+
+</script>
+
 <!--FooTable-->
 <script src="../plugins/footable/js/footable.all.min.js"></script>
 
 <!--FooTable Example-->
 <script src="assets/pages/jquery.footable.js"></script>
+
+<!-- Examples -->
+<script src="../plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/tiny-editable/mindmup-editabletable.js"></script>
+<script src="../plugins/tiny-editable/numeric-input-example.js"></script>
+
+<script src="assets/pages/jquery.datatables.editable.init.js"></script>
+
+<script>
+    $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+</script>
 
 <!-- END INCLUDES SCRIPTS -->

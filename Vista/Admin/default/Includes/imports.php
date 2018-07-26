@@ -17,4 +17,8 @@
 <!-- Responsive datatable examples -->
 <link href="../plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
+<!-- Plugin Css-->
+<link rel="stylesheet" href="../plugins/magnific-popup/css/magnific-popup.css" />
+<link rel="stylesheet" href="../plugins/jquery-datatables-editable/dataTables.bootstrap4.min.css" />
+
 <!-- END IMPORTS HEAD -->

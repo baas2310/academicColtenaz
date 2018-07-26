@@ -85,39 +85,35 @@
                                 Aquí usted puede ver la lista de los Cursos que se han registrado en el sistema.
                             </p>
 
-                            <table id="datatable" class="table m-0 table-colored-full table-full-inverse table-hover">
-                                <thead>
-                                <tr>
-                                    <th>Número</th>
-                                    <th>Cursos</th>
-                                </tr>
-                                </thead>
+                            <div class="table-responsive">
+                                <table id="mainTable" class="table m-0 table-colored-bordered table-bordered-inverse">
+                                    <thead>
+                                    <tr>
+                                        <th>Cursos</th>
+                                    </tr>
+                                    </thead>
 
 
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Primero</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Quinto</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Séptimo</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Decimo</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Preescolar</td>
-                                </tr>
+                                    <tbody>
+                                    <tr>
+                                        <td>Primero</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quinto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Séptimo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Decimo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Preescolar</td>
+                                    </tr>
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div> <!-- end row -->

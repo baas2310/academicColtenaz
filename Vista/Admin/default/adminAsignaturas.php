@@ -78,49 +78,44 @@
                 <!-- End row -->
 
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card-box table-responsive">
+                    <div class="col-sm-12">
+                        <div class="card-box">
                             <h4 class="m-t-0 header-title" align="center"><b>Lista de Asignaturas</b></h4>
                             <p class="text-muted font-13 m-b-30" align="center">
                                 Aquí usted puede ver la lista de las Asignaturas o Materias que se han registrado en el sistema.
                             </p>
 
-                            <table id="datatable" class="table m-0 table-colored-full table-full-inverse table-hover">
-                                <thead>
-                                <tr>
-                                    <th>Número</th>
-                                    <th>Asignatura o Materia</th>
-                                </tr>
-                                </thead>
+                            <div class="table-responsive">
+                                <table id="mainTable" class="table m-0 table-colored-bordered table-bordered-inverse">
+                                    <thead>
+                                    <tr>
+                                        <th>Asignatura o Materia</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Matematicas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Biología</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Español y Literatura</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Informatica</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sociales</td>
+                                    </tr>
 
-
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Matematicas</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Biología</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Español y Literatura</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Informatica</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Sociales</td>
-                                </tr>
-
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div> <!-- end row -->
+                </div>
+                <!-- end row -->
 
             </div> <!-- container -->
 

@@ -17,7 +17,7 @@
                         <li><a href="../default/adminCursos.php"><i class="icon-pencil"></i>Administrar Cursos</a></li>
                         <li><a href="../default/registrarAlumno.php"><i class="icon-graduation"></i>Registrar Alumno</a></li>
                         <li><a href="../default/adminAlumnos.php"><i class="fa spin fa-refresh"></i>Administrar Alumnos</a></li>
-                        <li><a href="#"><i class="icon-book-open"></i>Observador del Alumno</a></li>
+                        <li><a href="../default/observadorAlumnoAdmin.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                         <li><a href="#"><i class="icon-share-alt"></i>Crear Anuncio</a></li>
                     </ul>
                 </li>
@@ -27,7 +27,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="#"><i class="icon-pencil"></i>Administrar Tareas</a></li>
                         <li><a href="#"><i class="icon-chart"></i>Administrar Notas</a></li>
-                        <li><a href="#"><i class="icon-book-open"></i>Observador del Alumno</a></li>
+                        <li><a href="../default/observadorAlumnoAdmin.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                         <li><a href="#"><i class="icon-share-alt"></i>Crear Anuncio</a></li>
                     </ul>
                 </li>
@@ -37,7 +37,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="#"><i class="icon-pencil"></i>Tareas y Pendientes</a></li>
                         <li><a href="#"><i class="icon-chart"></i>Rendimiento Académico</a></li>
-                        <li><a href="#"><i class="icon-book-open"></i>Observador del Alumno</a></li>
+                        <li><a href="../default/observadorAlumno.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                     </ul>
                 </li>
                 <li>
@@ -46,7 +46,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="#"><i class="icon-pencil"></i>Tareas del Alumno</a></li>
                         <li><a href="#"><i class="icon-chart"></i>Renidimiento Académico</a></li>
-                        <li><a href="#"><i class="icon-book-open"></i>Observador del Alumno</a></li>
+                        <li><a href="../default/observadorAlumno.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                     </ul>
                 </li>
             </ul>
