@@ -60,7 +60,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title" align="center">Ovservador del Alumno</h4>
+                            <h4 class="m-t-0 header-title" align="center">Observador del Alumno</h4>
                             <p class="text-muted m-b-30 font-13" align="center">
                                 Aquí usted puede ver el Observador del Alumno y ver si tiene anotaciones en él.
                             </p>
@@ -97,7 +97,7 @@
                                                         </div>
                                                         <div class="col-md-6 text-center text-right">
                                                             <div class="form-group float-right">
-                                                                <input id="demo-foo-search" type="text" placeholder="Search" class="form-control" autocomplete="on">
+                                                                <input id="demo-foo-search" type="text" placeholder="Buscar" class="form-control" autocomplete="on">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -162,22 +162,6 @@
 <!-- END wrapper -->
 
 <?php include ("Includes/scripts.php")?>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#datatable').DataTable();
-
-        //Buttons examples
-        var table = $('#datatable-buttons').DataTable({
-            lengthChange: false,
-            buttons: ['copy', 'excel', 'pdf', 'colvis']
-        });
-
-        table.buttons().container()
-            .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-    } );
-
-</script>
 
 </body>
 </html>

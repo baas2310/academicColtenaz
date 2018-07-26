@@ -67,7 +67,7 @@
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="mdi mdi-settings"></i> <span>Ajustes de Perfil</span>
+                        <i class="mdi mdi-account-circle"></i> <span>Perfil</span>
                     </a>
 
                     <!-- item-->

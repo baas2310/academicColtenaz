@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="col-md-6 text-center text-right">
                                             <div class="form-group float-right">
-                                                <input id="demo-foo-search" type="text" placeholder="Search" class="form-control" autocomplete="on">
+                                                <input id="demo-foo-search" type="text" placeholder="Buscar" class="form-control" autocomplete="on">
                                             </div>
                                         </div>
                                     </div>
@@ -333,22 +333,6 @@
 <!-- END wrapper -->
 
 <?php include ("Includes/scripts.php")?>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#datatable').DataTable();
-
-        //Buttons examples
-        var table = $('#datatable-buttons').DataTable({
-            lengthChange: false,
-            buttons: ['copy', 'excel', 'pdf', 'colvis']
-        });
-
-        table.buttons().container()
-            .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-    } );
-
-</script>
 
 </body>
 </html>

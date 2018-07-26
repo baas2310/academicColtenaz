@@ -82,4 +82,29 @@
     $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
 </script>
 
+<!-- MODAL -->
+<div id="dialog" class="modal-block mfp-hide">
+    <section class="card p-20">
+        <header class="panel-heading">
+            <h4 class="panel-title mt-0">Are you sure?</h4>
+        </header>
+        <div class="panel-body">
+            <div class="modal-wrapper">
+                <div class="modal-text">
+                    <p>Are you sure that you want to delete this row?</p>
+                </div>
+            </div>
+
+            <div class="row m-t-20">
+                <div class="col-md-12 text-right">
+                    <button id="dialogConfirm" class="btn btn-success waves-effect waves-light">Confirm</button>
+                    <button id="dialogCancel" class="btn btn-danger waves-effect">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+<!-- end Modal -->
+
 <!-- END INCLUDES SCRIPTS -->
