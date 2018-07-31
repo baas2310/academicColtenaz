@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (empty($_SESSION["DataUser"]["idRol"])){
+    header("Location: login.php");
+}
+$_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
+
+/*if($_SESSION["user"] != "1" && $_SESSION["user"] != "8"){
+    header('Location: Index.php');
+}*/
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +53,7 @@
 
                 <!-- start row -->
                 <div class="row">
+
                     <div class="col-12">
                         <div class="page-title-box">
                             <h4 class="page-title float-left">Sistema de Gestión de Procesos Academicos Institución Educativa Técnica de Nazareth Nobsa.</h4>
@@ -58,38 +73,58 @@
                 <!-- start content row -->
                 <!-- Clickable Wizard -->
                 <div class="row">
+
+                    <div id="alertas" class="center-page">
+                        <?php if(!empty($_GET["respuesta"]) && $_GET["respuesta"] == "correcto"){ ?>
+                            <div class="alert alert-icon alert-success alert-dismissible fade show">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <i class="mdi mdi-check-all"></i>
+                                <strong>Registrado!</strong> Ha registrado exitosamente el Usuario. Para ver los Usuarios
+                                registrados ingrese
+                                <a href="adminUsuarios.php" class="alert-link">Aquí</a> .
+                            </div>
+                        <?php } ?>
+
+                    </div>
+
                     <div class="col-md-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title" align="center">Registro de Usuarios</h4>
+                            <h4 class="text-center text-custom"><strong>REGISTRO DE USUARIO</strong></h4>
                             <p class="text-muted m-b-30 font-13" align="center">
-                                Aquí usted puede registrar el Usuario de acuerdo al Rol(Coordinador,Docente,etc...) que va a desempeñar.
+                                Aquí usted puede registrar el Usuario de acuerdo al Cargo o Rol(Coordinador,Docente,etc...) que va a desempeñar.
                             </p>
 
-                            <form id="wizard-clickable">
+                            <form id="wizard-clickable" role="form" method="post" action="../../../Controlador/usuarioController.php?action=crear">
                                 <fieldset title="1">
                                     <legend>Información Básica</legend>
 
                                     <div class="row m-t-20">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="Documento">* Documento</label>
-                                                <input type="text" class="form-control" id="Documento" name="Documento" placeholder="Ingrese aquí el No. de Documento">
+                                                <label for="Documento"><span class="text-danger">*</span> Documento de Identidad</label>
+                                                <input type="text" class="form-control" id="Documento" name="Documento"
+                                                       placeholder="Ingrese aquí el No. de Documento"
+                                                       data-parsley-type="number" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Nombres">* Nombres</label>
-                                                <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Ingrese aquí el Nombre completo">
+                                                <label for="Nombres"><span class="text-danger">*</span> Nombres</label>
+                                                <input type="text" class="form-control" id="Nombres" name="Nombres"
+                                                       placeholder="Ingrese aquí el Nombre completo"
+                                                       parsley-trigger="change" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Email">* Email</label>
-                                                <input type="email" class="form-control" id="Email" name="Email" placeholder="direccionEmail@dominio.com">
+                                                <label for="Email"><span class="text-danger">*</span> Email</label>
+                                                <input type="email" class="form-control" id="Email" name="Email"
+                                                       placeholder="direccionEmail@dominio.com"
+                                                       parsley-trigger="change" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="TipoDocumento">* Tipo de Documento</label>
-                                                <select class="form-control">
+                                                <label for="TipoDocumento"><span class="text-danger">*</span> Tipo de Documento</label>
+                                                <select class="form-control" id="TipoDocumento" required name="TipoDocumento">
                                                     <option>C.C</option>
                                                     <option>C.E</option>
                                                     <option>Registro Civil</option>
@@ -97,13 +132,16 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Apellidos">* Apellidos</label>
-                                                <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Ingrese aquí los Apellidos">
+                                                <label for="Apellidos"><span class="text-danger">*</span> Apellidos</label>
+                                                <input type="text" class="form-control" id="Apellidos" name="Apellidos"
+                                                       placeholder="Ingrese aquí los Apellidos"
+                                                       parsley-trigger="change" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="ConfirmarEmail">* Confirmar Email</label>
-                                                <input type="email" class="form-control" id="password2" placeholder="direccionEmail@dominio.com">
+                                                <label for="ConfirmarEmail"><span class="text-danger">*</span> Confirmar Email</label>
+                                                <input type="email" class="form-control" id="Email2" required
+                                                       placeholder="direccionEmail@dominio.com" data-parsley-equalto="#Email">
                                             </div>
                                         </div>
                                     </div>
@@ -116,32 +154,35 @@
                                     <div class="row m-t-20">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="Numero">* Número de Celular</label>
-                                                <input type="text" class="form-control" id="Numero" name="Numero" placeholder="3xx xxx xxxx">
+                                                <label for="Numero"><span class="text-danger">*</span> Número de Celular</label>
+                                                <input type="text" class="form-control" id="Celular" name="Celular"
+                                                       placeholder="3xx xxx xxxx" parsley-trigger="change" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Direccion">* Dirección</label>
-                                                <input type="text" class="form-control" id="Direccion" name="Direccion" placeholder="Calle xx No. xx - xx">
+                                                <label for="Direccion"><span class="text-danger">*</span> Dirección</label>
+                                                <input type="text" class="form-control" id="Direccion" name="Direccion"
+                                                       placeholder="Calle xx No. xx - xx" parsley-trigger="change" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Password">* Contraseña</label>
-                                                <input type="password" class="form-control" id="Password" name="Password" placeholder="">
+                                                <label for="Password"><span class="text-danger">*</span> Contraseña</label>
+                                                <input type="password" class="form-control" id="Password" name="Password"
+                                                       placeholder="" parsley-trigger="change" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="Estado">* Estado</label>
-                                                <select class="form-control">
+                                                <label for="Estado"><span class="text-danger">*</span> Estado</label>
+                                                <select class="form-control" id="Estado" required name="Estado">
                                                     <option>Activo</option>
                                                     <option>Inactivo</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Cargo">* Cargo</label>
-                                                <select class="form-control">
+                                                <label for="Cargo"><span class="text-danger">*</span> Cargo o Rol</label>
+                                                <select class="form-control" id="idRol" required name="idRol">
                                                     <option>Rector(a)</option>
                                                     <option>Psicoorientador(a)</option>
                                                     <option>Coordinador(a)</option>
@@ -151,14 +192,18 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="ConfirmPassword">* Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="">
+                                                <label for="Password2"><span class="text-danger">*</span> Confirmar Contraseña</label>
+                                                <input data-parsley-equalto="#Password"type="password" class="form-control"
+                                                       id="Password2" name="Password2" placeholder="" required>
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
 
-                                <button type="submit" class="btn btn-primary stepy-finish"><i class="fa fa-check-square-o"></i>&nbspRegistrar</button>
+                                <button type="submit" class="btn btn-primary stepy-finish" value="validate"   style= "border-radius: 5px">
+                                    <i class="fa fa-check-square-o"></i><strong>&nbspRegistrar</strong>
+                                </button>
+
                             </form>
 
                             <p class="text-muted m-b-30 font-13">

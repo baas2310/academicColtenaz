@@ -1,8 +1,8 @@
 <?php
-/*session_start();
+session_start();
 if (!empty($_SESSION['idRol'])){
     header("Location: Index.php");
-}*/
+}
 ?>
 
 <!DOCTYPE html>
@@ -101,27 +101,33 @@ if (!empty($_SESSION['idRol'])){
 <!-- END HOME -->
 
 
-<!--<script>
+<script>
     $("#frmLogin").submit(function(e) {
         e.preventDefault();
 
         var Email = $("#Email").val();
-        var Contrasena = $("#Password").val();
+        var Password = $("#Password").val();
 
         $.ajax({
             method: "POST",
-            url: "../../../../Controlador/usuarioController.php?action=Login",
+            url: "../../../Controlador/usuarioController.php?action=Login",
             data: { Email: Email, Password: Password}
         })
             .done(function( msg ) {
                 console.log(msg);
-                if(msg == "Administrador"){
+                if(msg == "Rector"){
+                    window.location.href = "Index.php";
+                }else if (msg == "Psicorientador(a)"){
+                    window.location.href = "Index.php";
+                }else if (msg == "Coordinador(a)"){
+                    window.location.href = "Index.php";
+                }else if (msg == "Secretaria"){
                     window.location.href = "Index.php";
                 }else if (msg == "Docente"){
                     window.location.href = "Index.php";
-                }else if (msg == "Alumno"){
-                    window.location.href = "Index.php";
                 }else if (msg == "Acudiente"){
+                    window.location.href = "Index.php";
+                }else if (msg == "Estudiante"){
                     window.location.href = "Index.php";
                 }else{
                     swal(
@@ -136,7 +142,7 @@ if (!empty($_SESSION['idRol'])){
                 }
             });
     });
-</script>-->
+</script>
 
 <!-- Sweet-Alert  -->
 <script src="../plugins/sweet-alert2/sweetalert2.min.js"></script>

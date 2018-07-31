@@ -71,7 +71,7 @@
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="logout.php" class="dropdown-item notify-item">
                         <i class="mdi mdi-power"></i> <span>Cerrar Sesión</span>
                     </a>
 

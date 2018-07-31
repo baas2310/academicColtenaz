@@ -31,3 +31,7 @@ INSERT INTO `observador` (`idObservador`, `Observacion`, `FechaHora`, `idDocente
 editar la observacion:
 
 UPDATE `observador` SET `Observacion` = 'Buena Estudiante con buenas calificaciones' WHERE `observador`.`idObservador` = 1;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+login(nenossav@coltenaz.com/123456789...rector@coltenaz.com/123456)
+
