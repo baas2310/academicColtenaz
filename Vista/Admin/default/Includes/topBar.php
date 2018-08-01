@@ -1,3 +1,20 @@
+<?php
+if ($_SESSION["user"] == "1"){
+    $_SESSION["name"]= "Rector";
+}else if ($_SESSION["user"] == "2"){
+    $_SESSION["name"]= "Psicorientador(a)";
+}else if ($_SESSION["user"] == "3"){
+    $_SESSION["name"]= "Coordinador(a)";
+}else if ($_SESSION["user"] == "4"){
+    $_SESSION["name"]= "Secretaria";
+}else if ($_SESSION["user"] == "5"){
+    $_SESSION["name"]= "Docente";
+}else if ($_SESSION["user"] == "6"){
+    $_SESSION["name"]= "Acudiente";
+}else if ($_SESSION["user"] == "7"){
+    $_SESSION["name"]= "Estudiante";
+}
+?>
 <!-- Top Bar Start -->
 <div class="topbar">
 
@@ -62,12 +79,12 @@
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                     <!-- item-->
                     <div class="dropdown-item noti-title">
-                        <h5 class="text-overflow"><small>BIENVENIDO 'Admin'</small> </h5>
+                        <h5 class="text-overflow"><small>BIENVENIDO SR(A)</small> </h5>
                     </div>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <i class="mdi mdi-account-circle"></i> <span>Perfil</span>
+                        <i class="mdi mdi-account-circle"></i> <span><?php echo $_SESSION["name"] ?></span>
                     </a>
 
                     <!-- item-->

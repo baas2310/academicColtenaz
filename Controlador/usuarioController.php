@@ -124,7 +124,7 @@ class usuarioController
 
         $arrUsuarios = Usuario::getAll();
         $tmpUsuario = new Usuario();
-        $arrColumnas = [/*"idUsuario",*/ "No. Documento", "Tipo de Documento", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "Estado" ];
+        $arrColumnas = [/*"idUsuario",*/ "No. Documento", "Tipo de Documento", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "Cargo o Rol", "Estado" ];
         $htmltable = "<thead>";
         $htmltable .= "<tr>";
 
@@ -149,6 +149,20 @@ class usuarioController
             $htmltable .= "<td>".$objUsuario->getEmail()."</td>";
             $htmltable .= "<td>".$objUsuario->getCelular()."</td>";
             $htmltable .= "<td>".$objUsuario->getDireccion()."</td>";
+
+            if ($objUsuario->getIdRol() == "1"){
+                $htmltable .= "<td>"."Rector"."</td>";
+            }elseif ($objUsuario->getIdRol() == "2"){
+                $htmltable .= "<td>"."Psicorientador(a)"."</td>";
+            }elseif ($objUsuario->getIdRol() == "3"){
+                $htmltable .= "<td>"."Coordinador(a)"."</td>";
+            }elseif ($objUsuario->getIdRol() == "4"){
+                $htmltable .= "<td>"."Secretaria"."</td>";
+            }elseif ($objUsuario->getIdRol() == "5"){
+                $htmltable .= "<td>"."Docente"."</td>";
+            }elseif ($objUsuario->getIdRol() == "6"){
+                $htmltable .= "<td>"."Acudiente"."</td>";
+            }
 
             if ($objUsuario->getEstado() == "Activo"){
                 $htmltable .= "<td><span class= 'label label-success'>".$objUsuario->getEstado()."</span></td>";

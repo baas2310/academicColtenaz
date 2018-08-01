@@ -1,4 +1,4 @@
-crear un usuario:
+﻿crear un usuario:
 
 INSERT INTO `usuario` (`idUsuario`, `Documento`, `TipoDocumento`, `Apellidos`, `Nombres`, `Email`, `Celular`, `Estado`, `Contraseña`, `idRol`) VALUES (NULL, '1057582202', 'C.C', 'Riaño Nossa', 'Néstor Javier', 'njriano2@misena.edu.co', '3115550057', 'Activo', '123456', '1');
 
@@ -33,5 +33,5 @@ editar la observacion:
 UPDATE `observador` SET `Observacion` = 'Buena Estudiante con buenas calificaciones' WHERE `observador`.`idObservador` = 1;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-login(nenossav@coltenaz.com/123456789...rector@coltenaz.com/123456)
+SELECT Documento,TipoDocumento,Apellidos,Nombres,Email,Celular,Direccion,Rol,Estado FROM usuario U INNER JOIN rol R on U.idRol = R.idRol
 

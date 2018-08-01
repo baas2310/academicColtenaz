@@ -7,9 +7,9 @@ if (empty($_SESSION["DataUser"]["idRol"])){
 }
 $_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
 
-/*if($_SESSION["user"] != "1" && $_SESSION["user"] != "8"){
+if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != "3" && $_SESSION["user"] != "4"){
     header('Location: Index.php');
-}*/
+}
 ?>
 
 <!DOCTYPE html>
@@ -183,11 +183,12 @@ $_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
                                             <div class="form-group">
                                                 <label for="Cargo"><span class="text-danger">*</span> Cargo o Rol</label>
                                                 <select class="form-control" id="idRol" required name="idRol">
-                                                    <option>Rector(a)</option>
-                                                    <option>Psicoorientador(a)</option>
-                                                    <option>Coordinador(a)</option>
-                                                    <option>Secretaria</option>
-                                                    <option>Docente</option>
+                                                    <option value="1">Rector(a)</option>
+                                                    <option value="2">Psicoorientador(a)</option>
+                                                    <option value="3">Coordinador(a)</option>
+                                                    <option value="4">Secretaria</option>
+                                                    <option value="5">Docente</option>
+                                                    <option value="6">Acudiente</option>
                                                 </select>
                                             </div>
 

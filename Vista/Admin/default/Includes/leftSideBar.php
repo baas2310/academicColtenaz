@@ -7,6 +7,7 @@
             <!-- Left Menu Start -->
             <ul class="metismenu" id="side-menu">
                 <li class="menu-title">Menú Administrativo</li>
+                <?php if ($_SESSION['user'] == "1" || $_SESSION['user'] == "2" || $_SESSION['user'] == "3" || $_SESSION['user'] == "4") { ?>
                 <li>
                     <a href="javascript: void(0);"><i class="icon-people"></i>
                         <span> Administración </span> <span class="menu-arrow"></span></a>
@@ -21,6 +22,9 @@
                         <li><a href="#"><i class="icon-share-alt"></i>Crear Anuncio</a></li>
                     </ul>
                 </li>
+                <?php } ?>
+
+                <?php if ($_SESSION['user'] == "1" || $_SESSION['user'] == "5") { ?>
                 <li>
                     <a href="javascript: void(0);"><i class="fa fa-group"></i>
                         <span> Docentes </span> <span class="menu-arrow"></span></a>
@@ -31,6 +35,9 @@
                         <li><a href="#"><i class="icon-share-alt"></i>Crear Anuncio</a></li>
                     </ul>
                 </li>
+                <?php } ?>
+
+                <?php if ($_SESSION['user'] == "1" || $_SESSION['user'] == "7") { ?>
                 <li>
                     <a href="javascript: void(0);"><i class="fa fa-user-o "></i>
                         <span> Alumno </span> <span class="menu-arrow"></span></a>
@@ -40,6 +47,9 @@
                         <li><a href="../default/observadorAlumno.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                     </ul>
                 </li>
+                <?php } ?>
+
+                <?php if ($_SESSION['user'] == "1" ||$_SESSION['user'] == "6") { ?>
                 <li>
                     <a href="javascript: void(0);"><i class="fa fa-user-circle-o"></i>
                         <span> Acudiente </span> <span class="menu-arrow"></span></a>
@@ -49,6 +59,7 @@
                         <li><a href="../default/observadorAlumno.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                     </ul>
                 </li>
+                <?php } ?>
             </ul>
 
         </div>

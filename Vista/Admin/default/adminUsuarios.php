@@ -6,9 +6,9 @@ if (empty($_SESSION["DataUser"]["idRol"])){
 }
 $_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
 
-/*if($_SESSION["user"] != "1" && $_SESSION["user"] != "8"){
+if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != "3" && $_SESSION["user"] != "4"){
     header('Location: Index.php');
-}*/
+}
 ?>
 
 
@@ -16,7 +16,7 @@ $_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Administrar Cursos</title>
+    <title>Administrar Usuarios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -28,7 +28,7 @@ $_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
     <!-- Controlador Necesario -->
     <?php require "../../../Controlador/usuarioController.php" ?>
 
-    <!-- Scripts -->
+    <!-- Imports -->
     <?php include ("Includes/imports.php")?>
 
 </head>

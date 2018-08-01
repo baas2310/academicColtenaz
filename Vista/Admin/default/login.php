@@ -55,6 +55,8 @@ if (!empty($_SESSION['idRol'])){
                                 <h5 class="text-uppercase font-bold m-b-5 m-t-50" align="center">Iniciar sesión  </h5>
 
                             </div>
+
+
                             <div class="account-content">
                                 <form id="frmLogin" name="frmLogin" method="post" class="form-horizontal">
 
@@ -126,8 +128,6 @@ if (!empty($_SESSION['idRol'])){
                 }else if (msg == "Docente"){
                     window.location.href = "Index.php";
                 }else if (msg == "Acudiente"){
-                    window.location.href = "Index.php";
-                }else if (msg == "Estudiante"){
                     window.location.href = "Index.php";
                 }else{
                     swal(
