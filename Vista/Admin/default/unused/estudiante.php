@@ -1,8 +1,8 @@
 <?php
 
-require_once ('db_abstract_class.php');
+require_once('db_abstract_class.php');
 
-class estudiante
+class estudiante extends db_abstract_class
 {
     private $idUsuario;
     private $Documento;

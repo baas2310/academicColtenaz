@@ -14,6 +14,8 @@ class usuario extends db_abstract_class
     private $Celular;
     private $Direccion;
     private $Estado;
+    private $idCurso;
+    private $idAcudiente;
     private $idRol;
 
     public function __construct($acacdemiccoltenaz_data=array())
@@ -36,6 +38,8 @@ class usuario extends db_abstract_class
             $this->Celular = "";
             $this->Direccion = "";
             $this->Estado = "";
+            $this->idCurso = "";
+            $this->idAcudiente = "";
             $this->idRol = "";
 
 
@@ -210,6 +214,40 @@ class usuario extends db_abstract_class
     }
 
     /**
+     * @return mixed
+     */
+    public function getIdCurso()
+    {
+        return $this->idCurso;
+    }
+
+    /**
+     * @param mixed $idCurso
+     */
+    public function setIdCurso($idCurso)
+    {
+        $this->idCurso = $idCurso;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdAcudiente()
+    {
+        return $this->idAcudiente;
+    }
+
+    /**
+     * @param mixed $idAcudiente
+     */
+    public function setIdAcudiente($idAcudiente)
+    {
+        $this->idAcudiente = $idAcudiente;
+    }
+
+
+
+    /**
      * @return string
      */
     public function getIdRol()
@@ -241,6 +279,8 @@ class usuario extends db_abstract_class
             $usuario->Celular = $getRow['Celular'];
             $usuario->Direccion = $getRow['Direccion'];
             $usuario->Estado = $getRow['Estado'];
+            $usuario->idCurso = $getRow['idCurso'];
+            $usuario->idAcudiente = $getRow['idAcudiente'];
             $usuario->idRol = $getRow['idRol'];
 
 
@@ -269,6 +309,8 @@ class usuario extends db_abstract_class
             $usuario->Celular = $valor['Celular'];
             $usuario->Direccion = $valor['Direccion'];
             $usuario->Estado = $valor['Estado'];
+            $usuario->idCurso = $valor['idCurso'];
+            $usuario->idAcudiente = $valor['idAcudiente'];
             $usuario->idRol = $valor['idRol'];
 
             array_push($arrayUsu, $usuario);
@@ -286,7 +328,7 @@ class usuario extends db_abstract_class
     {
 
 
-        $this->insertRow("INSERT INTO usuario VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
+        $this->insertRow("INSERT INTO usuario VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -297,6 +339,8 @@ class usuario extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
+                $this->idCurso,
+                $this->idAcudiente,
                 $this->idRol
 
 
@@ -308,7 +352,7 @@ class usuario extends db_abstract_class
     public function editar()
     {
         $arrUser = (array) $this;
-        $this->updateRow("UPDATE usuario SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idRol = ? WHERE idUsuario = ?", array(
+        $this->updateRow("UPDATE usuario SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idCurso = ?, idAcudiente = ?, idRol = ? WHERE idUsuario = ?", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -319,6 +363,8 @@ class usuario extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
+                $this->idCurso,
+                $this->idAcudiente,
                 $this->idRol,
                 $this->idUsuario
 

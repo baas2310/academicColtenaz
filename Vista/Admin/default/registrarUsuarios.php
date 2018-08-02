@@ -2,6 +2,9 @@
 
 session_start();
 
+require "../../../Modelo/usuario.php";
+require "../../../Modelo/curso.php";
+
 if (empty($_SESSION["DataUser"]["idRol"])){
     header("Location: login.php");
 }
@@ -127,6 +130,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                 <select class="form-control" id="TipoDocumento" required name="TipoDocumento">
                                                     <option>C.C</option>
                                                     <option>C.E</option>
+                                                    <option>T.I</option>
                                                     <option>Registro Civil</option>
                                                 </select>
                                             </div>
@@ -166,11 +170,32 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                             </div>
 
                                             <div class="form-group">
+                                                <label for="Curso">Grado a Cursar</label>
+                                                <select class="form-control" id="idCurso" name="idCurso">
+                                                    <option value=" ">Sí Registra un Alumno seleccione unas de las opciones...</option>
+                                                    <option value="1">Primero</option>
+                                                    <option value="2">Segundo</option>
+                                                    <option value="3">Tercero</option>
+                                                    <option value="4">Curato</option>
+                                                    <option value="5">Quinto</option>
+                                                    <option value="6">Sexto</option>
+                                                    <option value="7">Septimo</option>
+                                                    <option value="8">Octavo</option>
+                                                    <option value="9">Noveno</option>
+                                                    <option value="10">Decimo</option>
+                                                    <option value="11">Undecimo</option>
+                                                    <option value="12">Preescolar</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
                                                 <label for="Password"><span class="text-danger">*</span> Contraseña</label>
                                                 <input type="password" class="form-control" id="Password" name="Password"
                                                        placeholder="" parsley-trigger="change" required>
                                             </div>
                                         </div>
+
+
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="Estado"><span class="text-danger">*</span> Estado</label>
@@ -189,7 +214,15 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                     <option value="4">Secretaria</option>
                                                     <option value="5">Docente</option>
                                                     <option value="6">Acudiente</option>
+                                                    <option value="7">Estudiante</option>
                                                 </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Acudiente">Acudiente</label>
+                                                <input type="text" class="form-control" id="idAcudiante" name="idAcudiente"
+                                                       placeholder="Ingrese aquí el código del Acudiente"
+                                                       parsley-trigger="change" value=" ">
                                             </div>
 
                                             <div class="form-group">
@@ -208,7 +241,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                             </form>
 
                             <p class="text-muted m-b-30 font-13">
-                                Los campos con un * son obligatorios para completar el Registro.
+                                Los campos con un <span class="text-danger">*</span> son obligatorios para completar el Registro.
                             </p>
 
                         </div>

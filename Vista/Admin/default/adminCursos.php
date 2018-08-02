@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+if (empty($_SESSION["DataUser"]["idRol"])){
+    header("Location: login.php");
+}
+$_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
+
+if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != "3" && $_SESSION["user"] != "4"){
+    header('Location: Index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,6 +92,25 @@
 
                 <div class="row">
                     <div class="col-12">
+                        <div class="card-box">
+                            <h4 class="text-center text-custom"><strong>LISTA DE CURSOS</strong></h4>
+                            <p class="text-muted m-b-30 font-13" align="center">
+                                Aquí usted puede ver y editar la lista de Cursos Registrados en el sistema.
+                            </p>
+
+                            <div class="panel-body">
+                                <table class="table table-hover m-0 table-colored-bordered table-bordered-inverse tickets-list table-actions-bar dt-responsive nowrap" cellspacing="0" width="100%" id="datatable">
+
+                                    <?php echo cursoController::adminTableCurso(); ?>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="row">
+                    <div class="col-12">
                         <div class="card-box table-responsive">
                             <h4 class="m-t-0 header-title" align="center"><b>Lista de Cursos</b></h4>
                             <p class="text-muted font-13 m-b-30" align="center">
@@ -116,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                </div> <!-- end row -->
+                </div>--> <!-- end row -->
 
             </div> <!-- container -->
 

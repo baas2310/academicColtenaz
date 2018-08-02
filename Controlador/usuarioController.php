@@ -49,6 +49,8 @@ class usuarioController
             $arrayUsuario['Celular'] = $_POST['Celular'];
             $arrayUsuario['Direccion'] = $_POST['Direccion'];
             $arrayUsuario['Estado'] = $_POST['Estado'];
+            $arrayUsuario['idCurso'] = $_POST['idCurso'];
+            $arrayUsuario['idAcudiente'] = $_POST['idAcudiente'];
             $arrayUsuario['idRol'] = $_POST['idRol'];
 
 
@@ -85,6 +87,8 @@ class usuarioController
             $arrayUsuario['Celular'] = $_POST['Celular'];
             $arrayUsuario['Direccion'] = $_POST['Direccion'];
             $arrayUsuario['Estado'] = $Estado;
+            $arrayUsuario['idCurso'] = $_POST['idCurso'];
+            $arrayUsuario['idAcudiente'] = $_POST['idAcudiente'];
             $arrayUsuario['idRol'] = $_POST['idRol'];
             $arrayUsuario['idUsuario'] = $_SESSION['IdUsuario'];
             $usuario = new Usuario($arrayUsuario);
@@ -124,7 +128,7 @@ class usuarioController
 
         $arrUsuarios = Usuario::getAll();
         $tmpUsuario = new Usuario();
-        $arrColumnas = [/*"idUsuario",*/ "No. Documento", "Tipo de Documento", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "Cargo o Rol", "Estado" ];
+        $arrColumnas = ["Código", "No. Documento", "Tipo de Doc", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "No.. Curso", "No. Acudiente", "Cargo o Rol", "Estado" ];
         $htmltable = "<thead>";
         $htmltable .= "<tr>";
 
@@ -141,7 +145,7 @@ class usuarioController
         foreach ($arrUsuarios as $objUsuario){
             $htmltable .="<tr>";
 
-            // $htmltable .= "<td>".$objUsuario->getIdUsuario()."</td>";
+            $htmltable .= "<td>".$objUsuario->getIdUsuario()."</td>";
             $htmltable .= "<td>".$objUsuario->getDocumento()."</td>";
             $htmltable .= "<td>".$objUsuario->getTipoDocumento()."</td>";
             $htmltable .= "<td>".$objUsuario->getApellidos()."</td>";
@@ -149,6 +153,9 @@ class usuarioController
             $htmltable .= "<td>".$objUsuario->getEmail()."</td>";
             $htmltable .= "<td>".$objUsuario->getCelular()."</td>";
             $htmltable .= "<td>".$objUsuario->getDireccion()."</td>";
+            $htmltable .= "<td>".$objUsuario->getIdCurso()."</td>";
+            $htmltable .= "<td>".$objUsuario->getIdAcudiente()."</td>";
+            //$htmltable .= "<td>".$objUsuario->getIdRol()."</td>";
 
             if ($objUsuario->getIdRol() == "1"){
                 $htmltable .= "<td>"."Rector"."</td>";
@@ -162,6 +169,8 @@ class usuarioController
                 $htmltable .= "<td>"."Docente"."</td>";
             }elseif ($objUsuario->getIdRol() == "6"){
                 $htmltable .= "<td>"."Acudiente"."</td>";
+            }elseif ($objUsuario->getIdRol() == "7"){
+                $htmltable .= "<td>"."Estudiante"."</td>";
             }
 
             if ($objUsuario->getEstado() == "Activo"){
@@ -233,6 +242,9 @@ class usuarioController
                         }elseif ($respuesta['idRol'] == "6"){
                             $_SESSION['DataUser'] = $respuesta;
                             echo "Acudiente";
+                        }elseif ($respuesta['idRol'] == "7"){
+                            $_SESSION['DataUser'] = $respuesta;
+                            echo "Estudiante";
                         }
                     }else{
                         echo "El usuario se encuentra Inactivo";

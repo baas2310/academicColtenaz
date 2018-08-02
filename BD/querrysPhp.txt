@@ -33,5 +33,7 @@ editar la observacion:
 UPDATE `observador` SET `Observacion` = 'Buena Estudiante con buenas calificaciones' WHERE `observador`.`idObservador` = 1;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-SELECT Documento,TipoDocumento,Apellidos,Nombres,Email,Celular,Direccion,Rol,Estado FROM usuario U INNER JOIN rol R on U.idRol = R.idRol
+querry para cargar los datos del estudiante con su acudiente
+
+SELECT U.Documento,U.TipoDocumento,U.Apellidos,U.Nombres,U.Email,U.Celular,U.Direccion,Curso,CONCAT(usuario.Documento,'-',usuario.Nombres,' ',usuario.Apellidos) as Acudiente,Rol,U.Estado  FROM usuario U INNER JOIN rol R on U.idRol = R.idRol INNER JOIN usuario on usuario.idUsuario=U.idAcudiente INNER JOIN curso C on U.idCurso = C.idCurso
 

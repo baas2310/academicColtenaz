@@ -3,7 +3,7 @@
 if(session_id() == "" )
     session_start();
 
-require_once (__DIR__.'/../Modelo/estudiante.php');
+require_once (__DIR__ . '/../Modelo/estudiante.php');
 
 if (!empty($_GET['action'])){
     estudianteController::main($_GET['action']);
