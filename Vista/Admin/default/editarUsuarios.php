@@ -125,7 +125,6 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                     <select class="form-control" data-style="btn-verde btn-bordered" id="TipoDocumento" required name="TipoDocumento">
                                                         <option <?php echo ($objUsuario->getTipoDocumento() == "C.C") ? "selected" : ""; ?> value="C.C">C.C</option>
                                                         <option <?php echo  ($objUsuario->getTipoDocumento() == "C.E") ? "selected" : ""; ?> value="C.E">C.E</option>
-                                                        <option <?php echo  ($objUsuario->getTipoDocumento() == "T.I") ? "selected" : ""; ?> value="T.I">T.I</option>
                                                         <option <?php echo ($objUsuario->getTipoDocumento() == "Registro Civil") ? "selected" : ""; ?> value="Registro Civil">Registro Civil</option>
                                                     </select>
                                                 </div>
@@ -185,39 +184,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                         <option <?php echo ($objUsuario->getIdRol() == "4") ? "selected" : ""; ?> value="4">Secretaria</option>
                                                         <option <?php echo ($objUsuario->getIdRol() == "5") ? "selected" : ""; ?> value="5">Docente</option>
                                                         <option <?php echo ($objUsuario->getIdRol() == "6") ? "selected" : ""; ?> value="6">Acudiente</option>
-                                                        <option <?php echo ($objUsuario->getIdRol() == "7") ? "selected" : ""; ?> value="7">Estudiante</option>
                                                     </select>
-                                                </div>
-
-                                            </div>
-
-                                            <br>
-
-                                            <div class="row">
-
-                                                <div class="col-lg-6">
-                                                    <label for="idCurso"><strong>Curso</strong></label>
-                                                    <select class="form-control" data-style="btn-verde btn-bordered" id="idCurso" required name="idCurso">
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "null") ? "selected" : ""; ?> value="">NULL</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "1") ? "selected" : ""; ?> value="1">Primero</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "2") ? "selected" : ""; ?> value="2">Segundo</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "3") ? "selected" : ""; ?> value="3">Tercero</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "4") ? "selected" : ""; ?> value="4">Cuarto</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "5") ? "selected" : ""; ?> value="5">Quinto</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "6") ? "selected" : ""; ?> value="6">Sexto</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "7") ? "selected" : ""; ?> value="7">Septimo</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "8") ? "selected" : ""; ?> value="8">Octavo</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "9") ? "selected" : ""; ?> value="9">Noveno</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "10") ? "selected" : ""; ?> value="10">Decimo</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "11") ? "selected" : ""; ?> value="11">Undecimo</option>
-                                                        <option <?php echo ($objUsuario->getIdCurso() == "12") ? "selected" : ""; ?> value="12">Preescolar</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <label for="idAcudiente"><strong>Acudiente</strong></label>
-                                                    <input type="text" value="<?php echo $objUsuario->getIdAcudiente(); ?>" name="idAcudiente" parsley-trigger="change" required
-                                                           placeholder="Datos del Acudiente" class="form-control" id="idAcudiente" >
                                                 </div>
 
                                             </div>

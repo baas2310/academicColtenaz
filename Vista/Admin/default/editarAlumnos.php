@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "../../../Modelo/usuario.php";
+require "../../../Modelo/estudiante.php";
 
 
 if (empty($_SESSION["DataUser"]["idRol"])){
@@ -28,7 +28,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
     <link rel="shortcut icon" href="assets/images/LogoColtenaz18.ico">
 
     <!-- Scripts -->
-    <?php include ("Includes/imports.php")?>
+    <?php include("Includes/imports.php") ?>
 
 </head>
 
@@ -39,11 +39,11 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 <div id="wrapper">
 
     <!-- Top Bar Start -->
-    <?php include ("Includes/topBar.php")?>
+    <?php include("Includes/topBar.php") ?>
     <!-- Top Bar End -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <?php include("Includes/leftSideBar.php")?>
+    <?php include("Includes/leftSideBar.php") ?>
     <!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
@@ -106,6 +106,10 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                                     <div class="row ">
                                         <div class="col-xs-9 center-page" style="width: 83%">
+
+                                            <p class="text-muted m-b-30 font-13">
+                                                Los campos con un <span class="text-danger">*</span> son obligatorios para completar la Actualización de Datos del Alumno o Estudiante.
+                                            </p>
 
                                             <div class="row">
 
@@ -182,6 +186,36 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                             <div class="row">
 
                                                 <div class="col-lg-6">
+                                                    <label for="idCurso"><strong>Curso</strong><span class="text-danger">*</span></label>
+                                                    <select class="form-control" data-style="btn-verde btn-bordered" id="idCurso" required name="idCurso">
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "1") ? "selected" : ""; ?> value="1">Primero</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "2") ? "selected" : ""; ?> value="2">Segundo</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "3") ? "selected" : ""; ?> value="3">Tercero</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "4") ? "selected" : ""; ?> value="4">Cuarto</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "5") ? "selected" : ""; ?> value="5">Quinto</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "6") ? "selected" : ""; ?> value="6">Sexto</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "7") ? "selected" : ""; ?> value="7">Septimo</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "8") ? "selected" : ""; ?> value="8">Octavo</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "9") ? "selected" : ""; ?> value="9">Noveno</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "10") ? "selected" : ""; ?> value="10">Decimo</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "11") ? "selected" : ""; ?> value="11">Undecimo</option>
+                                                        <option <?php echo ($objEstudiante->getIdCurso() == "12") ? "selected" : ""; ?> value="12">Preescolar</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <label for="idAcudiente"><strong>Acudiente</strong><span class="text-danger">*</span></label>
+                                                    <input type="text" value="<?php echo $objEstudiante->getIdAcudiente(); ?>" name="idAcudiente" parsley-trigger="change" required
+                                                           placeholder="Datos del Acudiente" class="form-control" id="idAcudiente" >
+                                                </div>
+
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row">
+
+                                                <div class="col-lg-6">
                                                     <label for="Password"><strong>Contraseña</strong><span class="text-danger">*</span></label>
                                                     <input id="Password" value="<?php echo $objEstudiante->getPassword(); ?>" name="Password" type="password" placeholder="Contraseña" required
                                                            class="form-control">
@@ -245,7 +279,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 </div>
 <!-- END wrapper -->
 
-<?php include ("Includes/scripts.php")?>
+<?php include("Includes/scripts.php") ?>
 
 </body>
 </html>

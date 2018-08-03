@@ -1,10 +1,10 @@
 <?php
 
-require_once ('db_abstract_class.php');
+require_once('db_abstract_class.php');
 
-class usuario extends db_abstract_class
+class estudiante extends db_abstract_class
 {
-    private $idUsuario;
+    private $idEstudiante;
     private $Documento;
     private $TipoDocumento;
     private $Apellidos;
@@ -14,6 +14,8 @@ class usuario extends db_abstract_class
     private $Celular;
     private $Direccion;
     private $Estado;
+    private $idCurso;
+    private $idAcudiente;
     private $idRol;
 
     public function __construct($acacdemiccoltenaz_data=array())
@@ -26,7 +28,7 @@ class usuario extends db_abstract_class
                 $this->$campo = $valor;
             }
         }else{
-            $this->idUsuario = "";
+            $this->idEstudiante = "";
             $this->Documento = "";
             $this->TipoDocumento = "";
             $this->Apellidos = "";
@@ -36,6 +38,8 @@ class usuario extends db_abstract_class
             $this->Celular = "";
             $this->Direccion = "";
             $this->Estado = "";
+            $this->idCurso = "";
+            $this->idAcudiente = "";
             $this->idRol = "";
 
 
@@ -50,23 +54,23 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getIdUsuario()
+    public function getIdEstudiante()
     {
-        return $this->idUsuario;
+        return $this->idEstudiante;
     }
 
     /**
-     * @param string $idUsuario
+     * @param mixed $idEstudiante
      */
-    public function setIdUsuario($idUsuario)
+    public function setIdEstudiante($idEstudiante)
     {
-        $this->idUsuario = $idUsuario;
+        $this->idEstudiante = $idEstudiante;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getDocumento()
     {
@@ -74,7 +78,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Documento
+     * @param mixed $Documento
      */
     public function setDocumento($Documento)
     {
@@ -82,7 +86,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getTipoDocumento()
     {
@@ -90,7 +94,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $TipoDocumento
+     * @param mixed $TipoDocumento
      */
     public function setTipoDocumento($TipoDocumento)
     {
@@ -98,7 +102,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getApellidos()
     {
@@ -106,7 +110,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Apellidos
+     * @param mixed $Apellidos
      */
     public function setApellidos($Apellidos)
     {
@@ -114,7 +118,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getNombres()
     {
@@ -122,7 +126,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Nombres
+     * @param mixed $Nombres
      */
     public function setNombres($Nombres)
     {
@@ -130,7 +134,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getEmail()
     {
@@ -138,7 +142,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Email
+     * @param mixed $Email
      */
     public function setEmail($Email)
     {
@@ -146,7 +150,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getPassword()
     {
@@ -154,7 +158,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Password
+     * @param mixed $Password
      */
     public function setPassword($Password)
     {
@@ -162,7 +166,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getCelular()
     {
@@ -170,7 +174,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Celular
+     * @param mixed $Celular
      */
     public function setCelular($Celular)
     {
@@ -178,7 +182,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getDireccion()
     {
@@ -186,7 +190,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Direccion
+     * @param mixed $Direccion
      */
     public function setDireccion($Direccion)
     {
@@ -194,7 +198,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getEstado()
     {
@@ -202,7 +206,7 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $Estado
+     * @param mixed $Estado
      */
     public function setEstado($Estado)
     {
@@ -210,7 +214,39 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @return string
+     * @return mixed
+     */
+    public function getIdCurso()
+    {
+        return $this->idCurso;
+    }
+
+    /**
+     * @param mixed $idCurso
+     */
+    public function setIdCurso($idCurso)
+    {
+        $this->idCurso = $idCurso;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdAcudiente()
+    {
+        return $this->idAcudiente;
+    }
+
+    /**
+     * @param mixed $idAcudiente
+     */
+    public function setIdAcudiente($idAcudiente)
+    {
+        $this->idAcudiente = $idAcudiente;
+    }
+
+    /**
+     * @return mixed
      */
     public function getIdRol()
     {
@@ -218,34 +254,34 @@ class usuario extends db_abstract_class
     }
 
     /**
-     * @param string $idRol
+     * @param mixed $idRol
      */
     public function setIdRol($idRol)
     {
         $this->idRol = $idRol;
     }
 
-
     public static function buscarForId($id)
     {
-        $usuario = new Usuario();
+        $estudiante = new Estudiante();
         if ($id  > 0){
-            $getRow = $usuario->getRow("SELECT * FROM usuario WHERE idUsuario =?", array($id));
-            $usuario->idUsuario = $getRow['idUsuario'];
-            $usuario->Documento = $getRow['Documento'];
-            $usuario->TipoDocumento = $getRow['TipoDocumento'];
-            $usuario->Apellidos = $getRow['Apellidos'];
-            $usuario->Nombres = $getRow['Nombres'];
-            $usuario->Email = $getRow['Email'];
-            $usuario->Password = $getRow['Password'];
-            $usuario->Celular = $getRow['Celular'];
-            $usuario->Direccion = $getRow['Direccion'];
-            $usuario->Estado = $getRow['Estado'];
-            $usuario->idRol = $getRow['idRol'];
+            $getRow = $estudiante->getRow("SELECT * FROM estudiante WHERE idEstudiante =?", array($id));
+            $estudiante->idEstudiante = $getRow['idEstudiante'];
+            $estudiante->Documento = $getRow['Documento'];
+            $estudiante->TipoDocumento = $getRow['TipoDocumento'];
+            $estudiante->Apellidos = $getRow['Apellidos'];
+            $estudiante->Nombres = $getRow['Nombres'];
+            $estudiante->Email = $getRow['Email'];
+            $estudiante->Password = $getRow['Password'];
+            $estudiante->Celular = $getRow['Celular'];
+            $estudiante->Direccion = $getRow['Direccion'];
+            $estudiante->Estado = $getRow['Estado'];
+            $estudiante->idCurso = $getRow['idCurso'];
+            $estudiante->idAcudiente = $getRow['idAcudiente'];
+            $estudiante->idRol = $getRow['idRol'];
 
-
-            $usuario->Disconnect();
-            return $usuario;
+            $estudiante->Disconnect();
+            return $estudiante;
         }else{
             return NULL;
         }
@@ -253,40 +289,42 @@ class usuario extends db_abstract_class
 
     public static function buscar($query)
     {
-        $arrayUsu = array();
-        $tmp = new Usuario();
+        $arrayEst = array();
+        $tmp = new Estudiante();
         $getRows = $tmp->getRows($query);
 
         foreach ($getRows as $valor){
-            $usuario = new Usuario();
-            $usuario->idUsuario = $valor['idUsuario'];
-            $usuario->Documento = $valor['Documento'];
-            $usuario->TipoDocumento = $valor['TipoDocumento'];
-            $usuario->Apellidos = $valor['Apellidos'];
-            $usuario->Nombres = $valor['Nombres'];
-            $usuario->Email = $valor['Email'];
-            $usuario->Password = $valor['Password'];
-            $usuario->Celular = $valor['Celular'];
-            $usuario->Direccion = $valor['Direccion'];
-            $usuario->Estado = $valor['Estado'];
-            $usuario->idRol = $valor['idRol'];
+            $estudiante = new Estudiante();
+            $estudiante->idEstudiante = $valor['idEstudiante'];
+            $estudiante->Documento = $valor['Documento'];
+            $estudiante->TipoDocumento = $valor['TipoDocumento'];
+            $estudiante->Apellidos = $valor['Apellidos'];
+            $estudiante->Nombres = $valor['Nombres'];
+            $estudiante->Email = $valor['Email'];
+            $estudiante->Password = $valor['Password'];
+            $estudiante->Celular = $valor['Celular'];
+            $estudiante->Direccion = $valor['Direccion'];
+            $estudiante->Estado = $valor['Estado'];
+            $estudiante->idCurso = $valor['idCurso'];
+            $estudiante->idAcudiente = $valor['idAcudiente'];
+            $estudiante->idRol = $valor['idRol'];
 
-            array_push($arrayUsu, $usuario);
+            array_push($arrayEst, $estudiante);
         }
         $tmp->Disconnect();
-        return $arrayUsu;
+        return $arrayEst;
     }
 
     public static function getAll()
     {
-        return Usuario::buscar("SELECT * FROM usuario ");
+        return Estudiante::buscar("SELECT * FROM estudiante ");
     }
 
     public function insertar()
     {
 
 
-        $this->insertRow("INSERT INTO usuario VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
+        $this->insertRow("INSERT INTO estudiante VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -297,6 +335,8 @@ class usuario extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
+                $this->idCurso,
+                $this->idAcudiente,
                 $this->idRol
 
 
@@ -308,7 +348,7 @@ class usuario extends db_abstract_class
     public function editar()
     {
         $arrUser = (array) $this;
-        $this->updateRow("UPDATE usuario SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idRol = ? WHERE idUsuario = ?", array(
+        $this->updateRow("UPDATE estudiante SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idCurso = ?, idAcudiente = ?, idRol = ? WHERE idEstudiante = ?", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -319,8 +359,10 @@ class usuario extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
+                $this->idCurso,
+                $this->idAcudiente,
                 $this->idRol,
-                $this->idUsuario
+                $this->idEstudiante
 
             )
         );
@@ -332,13 +374,12 @@ class usuario extends db_abstract_class
         // TODO: Implement eliminar() method.
     }
 
-
     public static function Login($Email, $Password){
-        $arrUsuarios = array();
-        $tmp = new Usuario();
-        $getTempUser = $tmp->getRows("SELECT * FROM usuario WHERE Email = '$Email'");
+        $arrEstudiantes = array();
+        $tmp = new Estudiante();
+        $getTempUser = $tmp->getRows("SELECT * FROM estudiante WHERE Email = '$Email'");
         if(count($getTempUser) >= 1){
-            $getrows = $tmp->getRows("SELECT * FROM usuario WHERE Email = '$Email' AND Password = '$Password'");
+            $getrows = $tmp->getRows("SELECT * FROM estudiante WHERE Email = '$Email' AND Password = '$Password'");
             if(count($getrows) >= 1){
                 foreach ($getrows as $valor) {
                     return $valor;
@@ -347,11 +388,11 @@ class usuario extends db_abstract_class
                 return "Contraseña Incorrecta";
             }
         }else{
-            return "No existe el usuario";
+            return "No existe el Estudiante";
         }
 
         $tmp->Disconnect();
-        return $arrUsuarios;
+        return $arrEstudiantes;
     }
 
 }

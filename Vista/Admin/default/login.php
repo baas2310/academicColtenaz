@@ -130,6 +130,28 @@ if (!empty($_SESSION['idRol'])){
                 }else if (msg == "Acudiente"){
                     window.location.href = "Index.php";
                 }else{
+                    /*swal(
+                        {
+                            title: 'Error!',
+                            text: ''+msg,
+                            type: 'error',
+                            confirmButtonColor: '#e81a2d',
+                            timer: 5000
+                        }
+                    );*/
+                }
+            });
+
+        $.ajax({
+            method: "POST",
+            url: "../../../Controlador/estudianteController.php?action=Login",
+            data: { Email: Email, Password: Password}
+        })
+            .done(function( msg ) {
+                console.log(msg);
+                if (msg == "Estudiante"){
+                    window.location.href = "Index.php";
+                }else{
                     swal(
                         {
                             title: 'Error!',

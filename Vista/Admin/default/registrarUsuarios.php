@@ -3,7 +3,6 @@
 session_start();
 
 require "../../../Modelo/usuario.php";
-require "../../../Modelo/curso.php";
 
 if (empty($_SESSION["DataUser"]["idRol"])){
     header("Location: login.php");
@@ -130,7 +129,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                 <select class="form-control" id="TipoDocumento" required name="TipoDocumento">
                                                     <option>C.C</option>
                                                     <option>C.E</option>
-                                                    <option>T.I</option>
+                                                    <!--<option>T.I</option>-->
                                                     <option>Registro Civil</option>
                                                 </select>
                                             </div>
@@ -169,10 +168,10 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                        placeholder="Calle xx No. xx - xx" parsley-trigger="change" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                                 <label for="Curso">Grado a Cursar</label>
                                                 <select class="form-control" id="idCurso" name="idCurso">
-                                                    <option value=" ">Sí Registra un Alumno seleccione unas de las opciones...</option>
+                                                    <option value="13">Sí Registra un Alumno seleccione unas de las opciones...</option>
                                                     <option value="1">Primero</option>
                                                     <option value="2">Segundo</option>
                                                     <option value="3">Tercero</option>
@@ -186,7 +185,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                     <option value="11">Undecimo</option>
                                                     <option value="12">Preescolar</option>
                                                 </select>
-                                            </div>
+                                            </div>-->
 
                                             <div class="form-group">
                                                 <label for="Password"><span class="text-danger">*</span> Contraseña</label>
@@ -214,16 +213,16 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                     <option value="4">Secretaria</option>
                                                     <option value="5">Docente</option>
                                                     <option value="6">Acudiente</option>
-                                                    <option value="7">Estudiante</option>
+                                                    <!--<option value="7">Estudiante</option>-->
                                                 </select>
                                             </div>
 
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                                 <label for="Acudiente">Acudiente</label>
                                                 <input type="text" class="form-control" id="idAcudiante" name="idAcudiente"
                                                        placeholder="Ingrese aquí el código del Acudiente"
-                                                       parsley-trigger="change" value=" ">
-                                            </div>
+                                                       parsley-trigger="change" >
+                                            </div>-->
 
                                             <div class="form-group">
                                                 <label for="Password2"><span class="text-danger">*</span> Confirmar Contraseña</label>

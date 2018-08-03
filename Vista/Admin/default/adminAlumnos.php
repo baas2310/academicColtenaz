@@ -28,7 +28,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
     <?php require "../../../Controlador/estudianteController.php" ?>
 
     <!-- Imports -->
-    <?php include ("Includes/imports.php")?>
+    <?php include("Includes/imports.php") ?>
 
 </head>
 
@@ -39,11 +39,11 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 <div id="wrapper">
 
     <!-- Top Bar Start -->
-    <?php include ("Includes/topBar.php")?>
+    <?php include("Includes/topBar.php") ?>
     <!-- Top Bar End -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <?php include("Includes/leftSideBar.php")?>
+    <?php include("Includes/leftSideBar.php") ?>
     <!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
@@ -123,7 +123,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 </div>
 <!-- END wrapper -->
 
-<?php include ("Includes/scripts.php")?>
+<?php include("Includes/scripts.php") ?>
 
 </body>
 </html>
