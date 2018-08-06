@@ -14,7 +14,6 @@ class estudiante extends db_abstract_class
     private $Celular;
     private $Direccion;
     private $Estado;
-    private $idCurso;
     private $idAcudiente;
     private $idRol;
 
@@ -38,7 +37,6 @@ class estudiante extends db_abstract_class
             $this->Celular = "";
             $this->Direccion = "";
             $this->Estado = "";
-            $this->idCurso = "";
             $this->idAcudiente = "";
             $this->idRol = "";
 
@@ -216,22 +214,6 @@ class estudiante extends db_abstract_class
     /**
      * @return mixed
      */
-    public function getIdCurso()
-    {
-        return $this->idCurso;
-    }
-
-    /**
-     * @param mixed $idCurso
-     */
-    public function setIdCurso($idCurso)
-    {
-        $this->idCurso = $idCurso;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getIdAcudiente()
     {
         return $this->idAcudiente;
@@ -276,7 +258,6 @@ class estudiante extends db_abstract_class
             $estudiante->Celular = $getRow['Celular'];
             $estudiante->Direccion = $getRow['Direccion'];
             $estudiante->Estado = $getRow['Estado'];
-            $estudiante->idCurso = $getRow['idCurso'];
             $estudiante->idAcudiente = $getRow['idAcudiente'];
             $estudiante->idRol = $getRow['idRol'];
 
@@ -305,7 +286,6 @@ class estudiante extends db_abstract_class
             $estudiante->Celular = $valor['Celular'];
             $estudiante->Direccion = $valor['Direccion'];
             $estudiante->Estado = $valor['Estado'];
-            $estudiante->idCurso = $valor['idCurso'];
             $estudiante->idAcudiente = $valor['idAcudiente'];
             $estudiante->idRol = $valor['idRol'];
 
@@ -324,7 +304,7 @@ class estudiante extends db_abstract_class
     {
 
 
-        $this->insertRow("INSERT INTO estudiante VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
+        $this->insertRow("INSERT INTO estudiante VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -335,7 +315,6 @@ class estudiante extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
-                $this->idCurso,
                 $this->idAcudiente,
                 $this->idRol
 
@@ -348,7 +327,7 @@ class estudiante extends db_abstract_class
     public function editar()
     {
         $arrUser = (array) $this;
-        $this->updateRow("UPDATE estudiante SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idCurso = ?, idAcudiente = ?, idRol = ? WHERE idEstudiante = ?", array(
+        $this->updateRow("UPDATE estudiante SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idAcudiente = ?, idRol = ? WHERE idEstudiante = ?", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -359,7 +338,6 @@ class estudiante extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
-                $this->idCurso,
                 $this->idAcudiente,
                 $this->idRol,
                 $this->idEstudiante

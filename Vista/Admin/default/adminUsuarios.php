@@ -22,9 +22,6 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/LogoColtenaz18.ico">
-
     <!-- Controlador Necesario -->
     <?php require "../../../Controlador/usuarioController.php" ?>
 

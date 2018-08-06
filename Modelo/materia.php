@@ -2,10 +2,10 @@
 
 require_once ('db_abstract_class.php');
 
-class curso extends db_abstract_class
+class materia extends db_abstract_class
 {
-    private $idCurso;
-    private $Curso;
+    private $idMateria;
+    private $Materia;
     private $Estado;
 
     public function __construct($acacdemiccoltenaz_data=array())
@@ -18,14 +18,12 @@ class curso extends db_abstract_class
                 $this->$campo = $valor;
             }
         }else{
-            $this->idCurso = "";
-            $this->Curso = "";
+            $this->idMateria = "";
+            $this->Materia = "";
             $this->Estado = "";
 
         }
     }
-
-
 
     /* Metodo destructor cierra la conexion. */
     function __destruct() {
@@ -35,33 +33,33 @@ class curso extends db_abstract_class
     /**
      * @return mixed
      */
-    public function getIdCurso()
+    public function getIdMateria()
     {
-        return $this->idCurso;
+        return $this->idMateria;
     }
 
     /**
-     * @param mixed $idCurso
+     * @param mixed $idMateria
      */
-    public function setIdCurso($idCurso)
+    public function setIdMateria($idMateria)
     {
-        $this->idCurso = $idCurso;
+        $this->idMateria = $idMateria;
     }
 
     /**
      * @return mixed
      */
-    public function getCurso()
+    public function getMateria()
     {
-        return $this->Curso;
+        return $this->Materia;
     }
 
     /**
-     * @param mixed $Curso
+     * @param mixed $Materia
      */
-    public function setCurso($Curso)
+    public function setMateria($Materia)
     {
-        $this->Curso = $Curso;
+        $this->Materia = $Materia;
     }
 
     /**
@@ -82,16 +80,16 @@ class curso extends db_abstract_class
 
     public static function buscarForId($id)
     {
-        $curso = new Curso();
+        $materia = new Materia();
         if ($id  > 0){
-            $getRow = $curso->getRow("SELECT * FROM curso WHERE idCurso =?", array($id));
-            $curso->idCurso = $getRow['idCurso'];
-            $curso->Curso = $getRow['Curso'];
-            $curso->Estado = $getRow['Estado'];
+            $getRow = $materia->getRow("SELECT * FROM materia WHERE idMateria =?", array($id));
+            $materia->idMateria = $getRow['idMateria'];
+            $materia->Materia = $getRow['Materia'];
+            $materia->Estado = $getRow['Estado'];
 
 
-            $curso->Disconnect();
-            return $curso;
+            $materia->Disconnect();
+            return $materia;
         }else{
             return NULL;
         }
@@ -99,34 +97,34 @@ class curso extends db_abstract_class
 
     public static function buscar($query)
     {
-        $arrayCurso = array();
-        $tmp = new Curso();
+        $arrayMateria = array();
+        $tmp = new Materia();
         $getRows = $tmp->getRows($query);
 
         foreach ($getRows as $valor){
-            $curso = new Curso();
-            $curso->idCurso = $valor['idCurso'];
-            $curso->Curso = $valor['Curso'];
-            $curso->Estado = $valor['Estado'];
+            $materia = new Materia();
+            $materia->idMateria = $valor['idMateria'];
+            $materia->Materia = $valor['Materia'];
+            $materia->Estado = $valor['Estado'];
 
-            array_push($arrayCurso, $curso);
+            array_push($arrayMateria, $materia);
         }
         $tmp->Disconnect();
-        return $arrayCurso;
+        return $arrayMateria;
     }
 
     public static function getAll()
     {
-        return Curso::buscar("SELECT * FROM curso ");
+        return Materia::buscar("SELECT * FROM materia ");
     }
 
     public function insertar()
     {
 
 
-        $this->insertRow("INSERT INTO curso VALUE ( NULL , ?, ?)", array(
+        $this->insertRow("INSERT INTO materia VALUE ( NULL , ?, ?)", array(
 
-                $this->Curso,
+                $this->Materia,
                 $this->Estado
 
 
@@ -137,12 +135,12 @@ class curso extends db_abstract_class
 
     public function editar()
     {
-        $arrCurso = (array) $this;
-        $this->updateRow("UPDATE curso SET  Curso = ?,  Estado = ? WHERE idCurso = ?", array(
+        $arrMateria = (array) $this;
+        $this->updateRow("UPDATE materia SET  Materia = ?,  Estado = ? WHERE idMateria = ?", array(
 
-                $this->Curso,
+                $this->Materia,
                 $this->Estado,
-                $this->idCurso
+                $this->idMateria
 
             )
         );

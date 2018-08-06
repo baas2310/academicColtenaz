@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+
+require "../../../Modelo/curso.php";
+
 if (empty($_SESSION["DataUser"]["idRol"])){
     header("Location: login.php");
 }
@@ -21,8 +24,8 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/LogoColtenaz18.ico">
+    <!-- Controlador Necesario -->
+    <?php require "../../../Controlador/cursoController.php" ?>
 
     <?php include ("Includes/imports.php")?>
 
@@ -70,19 +73,42 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                 <!-- start content row -->
                 <div class="row">
+
                     <div class="col-md-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title" align="center">Registro de Cursos</h4>
+                            <h4 class="text-center text-custom"><strong>REGISTRO DE CURSOS</strong></h4>
                             <p class="text-muted m-b-30 font-13" align="center">
                                 Aquí usted puede registrar y Administrar los Cursos del plantel educativo.
                             </p>
 
-                            <form role="form">
-                                <div class="form-group">
-                                    <label for="Curso">Cursos</label>
-                                    <input type="text" class="form-control" id="Curso" name="Curso" placeholder="Ingrese el nuevo curso">
+                            <form role="form" method="post" action="../../../Controlador/cursoController.php?action=crear">
+                                <div class="row m-t-20">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="Curso">Curso o Grado a Registrar:</label>
+                                            <input type="text" class="form-control" id="Curso" name="Curso"
+                                                   required placeholder="Ingrese el nuevo curso">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="Estado"><span class="text-danger">*</span> Estado</label>
+                                            <select class="form-control" id="Estado" required name="Estado">
+                                                <option>Activo</option>
+                                                <option>Inactivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-primary stepy-finish" value="validate"   style= "border-radius: 5px">
+                                            <i class="fa fa-check-square-o"></i><strong>&nbspRegistrar</strong>
+                                        </button>
+                                    </div>
+
                                 </div>
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i>&nbspRegistrar</button>
                             </form>
 
                         </div>
@@ -95,7 +121,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                         <div class="card-box">
                             <h4 class="text-center text-custom"><strong>LISTA DE CURSOS</strong></h4>
                             <p class="text-muted m-b-30 font-13" align="center">
-                                Aquí usted puede ver y editar la lista de Cursos Registrados en el sistema.
+                                Aquí usted puede ver la lista de Cursos Registrados en el sistema.
                             </p>
 
                             <div class="panel-body">
@@ -108,48 +134,6 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                         </div>
                     </div>
                 </div>
-
-                <!--<div class="row">
-                    <div class="col-12">
-                        <div class="card-box table-responsive">
-                            <h4 class="m-t-0 header-title" align="center"><b>Lista de Cursos</b></h4>
-                            <p class="text-muted font-13 m-b-30" align="center">
-                                Aquí usted puede ver la lista de los Cursos que se han registrado en el sistema.
-                            </p>
-
-                            <div class="table-responsive">
-                                <table id="mainTable" class="table m-0 table-colored-bordered table-bordered-inverse">
-                                    <thead>
-                                    <tr>
-                                        <th>Cursos</th>
-                                    </tr>
-                                    </thead>
-
-
-                                    <tbody>
-                                    <tr>
-                                        <td>Primero</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Quinto</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Séptimo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Decimo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Preescolar</td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>--> <!-- end row -->
-
             </div> <!-- container -->
 
         </div> <!-- content -->

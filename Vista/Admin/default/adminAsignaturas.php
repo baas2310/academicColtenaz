@@ -1,15 +1,31 @@
+<?php
+
+session_start();
+
+require "../../../Modelo/materia.php";
+
+if (empty($_SESSION["DataUser"]["idRol"])){
+    header("Location: login.php");
+}
+$_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
+
+if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != "3" && $_SESSION["user"] != "4"){
+    header('Location: Index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Administrar Asignaturas</title>
+    <title>Administrar Cursos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/LogoColtenaz18.ico">
+    <!-- Controlador Necesario -->
+    <?php require "../../../Controlador/materiaController.php" ?>
 
     <?php include ("Includes/imports.php")?>
 
@@ -46,7 +62,7 @@
                             <ol class="breadcrumb float-right">
                                 <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
                                 <li class="breadcrumb-item"><a href="#">Administración</a></li>
-                                <li class="breadcrumb-item active">Administrar Asignatura</li>
+                                <li class="breadcrumb-item active">Administrar Asignaturas</li>
                             </ol>
 
                             <div class="clearfix"></div>
@@ -57,19 +73,42 @@
 
                 <!-- start content row -->
                 <div class="row">
+
                     <div class="col-md-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title" align="center">Registro de Asignaturas</h4>
+                            <h4 class="text-center text-custom"><strong>REGISTRO DE ASIGNATURAS</strong></h4>
                             <p class="text-muted m-b-30 font-13" align="center">
-                                Aquí usted puede registrar y Administrar las Asignaturas o Materias que se dictan en el plantel educativo.
+                                Aquí usted puede registrar y Administrar las Asignaturas que se imparten en el plantel educativo.
                             </p>
 
-                            <form role="form">
-                                <div class="form-group">
-                                    <label for="Materia">Asignatura</label>
-                                    <input type="text" class="form-control" id="Materia" name="Materia" placeholder="Ingrese la nueva asignatura">
+                            <form role="form" method="post" action="../../../Controlador/materiaController.php?action=crear">
+                                <div class="row m-t-20">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="Curso">Asignatura o Materia a Registrar:</label>
+                                            <input type="text" class="form-control" id="Materia" name="Materia"
+                                                   required placeholder="Ingrese la nueva asignatura">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="Estado"><span class="text-danger">*</span> Estado</label>
+                                            <select class="form-control" id="Estado" required name="Estado">
+                                                <option>Activo</option>
+                                                <option>Inactivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-primary stepy-finish" value="validate"   style= "border-radius: 5px">
+                                            <i class="fa fa-check-square-o"></i><strong>&nbspRegistrar</strong>
+                                        </button>
+                                    </div>
+
                                 </div>
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i>&nbspRegistrar</button>
                             </form>
 
                         </div>
@@ -78,45 +117,23 @@
                 <!-- End row -->
 
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title" align="center"><b>Lista de Asignaturas</b></h4>
-                            <p class="text-muted font-13 m-b-30" align="center">
-                                Aquí usted puede ver la lista de las Asignaturas o Materias que se han registrado en el sistema.
+                            <h4 class="text-center text-custom"><strong>LISTA DE ASIGNATURAS</strong></h4>
+                            <p class="text-muted m-b-30 font-13" align="center">
+                                Aquí usted puede ver la lista de Asignaturas o Materias Registradas en el sistema.
                             </p>
 
-                            <div class="table-responsive">
-                                <table id="mainTable" class="table m-0 table-colored-bordered table-bordered-inverse">
-                                    <thead>
-                                    <tr>
-                                        <th>Asignatura o Materia</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Matematicas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Biología</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Español y Literatura</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Informatica</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sociales</td>
-                                    </tr>
+                            <div class="panel-body">
+                                <table class="table table-hover m-0 table-colored-bordered table-bordered-inverse tickets-list table-actions-bar dt-responsive nowrap" cellspacing="0" width="100%" id="datatable">
 
-                                    </tbody>
+                                    <?php echo materiaController::adminTableMateria(); ?>
+
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end row -->
-
             </div> <!-- container -->
 
         </div> <!-- content -->

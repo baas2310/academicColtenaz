@@ -24,9 +24,6 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/LogoColtenaz18.ico">
-
     <?php include("Includes/imports.php") ?>
 
 </head>
@@ -143,9 +140,9 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="ConfirmarEmail"><span class="text-danger">*</span> Confirmar Email</label>
-                                                <input type="email" class="form-control" id="Email2" required
-                                                       placeholder="direccionEmail@dominio.com" data-parsley-equalto="#Email">
+                                                <label for="Numero"><span class="text-danger">*</span> Número de Celular</label>
+                                                <input type="text" class="form-control" id="Celular" name="Celular"
+                                                       placeholder="3xx xxx xxxx" parsley-trigger="change" required>
                                             </div>
                                         </div>
                                     </div>
@@ -157,11 +154,6 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                                     <div class="row m-t-20">
                                         <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="Numero"><span class="text-danger">*</span> Número de Celular</label>
-                                                <input type="text" class="form-control" id="Celular" name="Celular"
-                                                       placeholder="3xx xxx xxxx" parsley-trigger="change" required>
-                                            </div>
 
                                             <div class="form-group">
                                                 <label for="Direccion"><span class="text-danger">*</span> Dirección</label>
@@ -188,24 +180,6 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                 <select class="form-control" id="Estado" required name="Estado">
                                                     <option>Activo</option>
                                                     <option>Inactivo</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="Curso"><span class="text-danger">*</span>Grado a Cursar</label>
-                                                <select class="form-control" id="idCurso" name="idCurso">
-                                                    <option value="1">Primero</option>
-                                                    <option value="2">Segundo</option>
-                                                    <option value="3">Tercero</option>
-                                                    <option value="4">Curato</option>
-                                                    <option value="5">Quinto</option>
-                                                    <option value="6">Sexto</option>
-                                                    <option value="7">Septimo</option>
-                                                    <option value="8">Octavo</option>
-                                                    <option value="9">Noveno</option>
-                                                    <option value="10">Decimo</option>
-                                                    <option value="11">Undecimo</option>
-                                                    <option value="12">Preescolar</option>
                                                 </select>
                                             </div>
 

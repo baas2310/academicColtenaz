@@ -8,9 +8,6 @@
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/LogoColtenaz18.ico">
-
     <?php include ("Includes/imports.php")?>
 
 </head>

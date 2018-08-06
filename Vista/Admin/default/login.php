@@ -15,21 +15,7 @@ if (!empty($_SESSION['idRol'])){
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/LogoColtenaz18.ico">
-
-
-    <!-- Sweet Alert -->
-    <link href="../plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
-
-    <!-- App css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/modernizr.min.js"></script>
+    <?php include ("Includes/imports.php")?>
 
 </head>
 

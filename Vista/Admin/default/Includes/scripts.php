@@ -107,4 +107,8 @@
 </div>
 <!-- end Modal -->
 
+<!-- Sweet-Alert  -->
+<script src="../plugins/sweet-alert2/sweetalert2.min.js"></script>
+<script src="assets/pages/jquery.sweet-alert.init.js"></script>
+
 <!-- END INCLUDES SCRIPTS -->

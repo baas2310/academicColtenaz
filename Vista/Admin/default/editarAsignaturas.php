@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "../../../Modelo/curso.php";
+require "../../../Modelo/materia.php";
 
 
 if (empty($_SESSION["DataUser"]["idRol"])){
@@ -18,7 +18,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Actualizar Curso</title>
+    <title>Actualizar Asignatura o Materia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -60,7 +60,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                             <ol class="breadcrumb float-right">
                                 <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
                                 <li class="breadcrumb-item"><a href="#">Administración</a></li>
-                                <li class="breadcrumb-item active">Actualizar Curso</li>
+                                <li class="breadcrumb-item active">Actualizar Asignatura</li>
                             </ol>
 
                             <div class="clearfix"></div>
@@ -74,16 +74,16 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                 <div class="row">
 
 
-                    <?php if (!isset($_GET["IdCurso"])){ ?>
+                    <?php if (!isset($_GET["IdMateria"])){ ?>
                         <div class="alert alert-icon alert-danger alert-dismissible fade show">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <i class="mdi mdi-block-helper"></i>
-                            No se pudo actualizar el Curso.<strong>Error: no se encontro la informacion del Curso.</strong> Puede administrar los Usuarios desde <a href="adminCursos.php" class="alert-link">Aquí</a>.
+                            No se pudo actualizar la Asignatura.<strong>Error: no se encontro la informacion de la Asignatura.</strong> Puede administrar las Asignaturas o Materias desde <a href="adminAsignaturas.php" class="alert-link">Aquí</a>.
                         </div>
                     <?php }else{
-                        $IdCurso = $_GET["IdCurso"];
-                        $_SESSION["IdCurso"] = $IdCurso;
-                        $objCurso = Curso::buscarForId($IdCurso);
+                        $IdMateria = $_GET["IdMateria"];
+                        $_SESSION["IdMateria"] = $IdMateria;
+                        $objMateria = Materia::buscarForId($IdMateria);
                         ?>
 
 
@@ -95,23 +95,23 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                             <div class="card-box">
 
-                                <h4 class="text-center text-custom"><strong>ACTUALIZAR CURSO</strong></h4>
+                                <h4 class="text-center text-custom"><strong>ACTUALIZAR ASIGNATURA</strong></h4>
 
                                 <br>
 
-                                <form role="form" method="post" action="../../../Controlador/cursoController.php?action=editar">
+                                <form role="form" method="post" action="../../../Controlador/materiaController.php?action=editar">
 
                                     <div class="row ">
                                         <div class="col-xs-9 center-page" style="width: 83%">
 
                                             <p class="text-muted m-b-30 font-13">
-                                                Los campos con un <span class="text-danger">*</span> son obligatorios para completar la Actualización de Datos del Curso.
+                                                Los campos con un <span class="text-danger">*</span> son obligatorios para completar la Actualización de Datos de la Asignatura.
                                             </p>
 
                                             <div class="row">
 
-                                                <label for="Curso"><strong>Curso o Grado </strong><span class="text-danger">*</span> </label>
-                                                <input type="text" value="<?php echo $objCurso->getCurso(); ?>" name="Curso" id="Curso"
+                                                <label for="Materia"><strong>Asignatura o Materia </strong><span class="text-danger">*</span> </label>
+                                                <input type="text" value="<?php echo $objMateria->getMateria(); ?>" name="Materia" id="Materia"
                                                        class="form-control" data-parsley-type="number" required
                                                        placeholder=""/>
 
@@ -129,7 +129,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                                             <div class="form-group text-center">
 
-                                                <button onclick=" location.href='adminCursos.php'" type="reset" class="btn btn-gris font-15" style="border-radius: 5px">
+                                                <button onclick=" location.href='adminAsignaturas.php'" type="reset" class="btn btn-gris font-15" style="border-radius: 5px">
                                                     <strong>Cancelar</strong>
                                                 </button>
 

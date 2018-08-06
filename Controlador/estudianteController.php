@@ -128,7 +128,7 @@ class estudianteController
 
         $arrEstudiantes = Estudiante::getAll();
         $tmpEstudiantes = new Estudiante();
-        $arrColumnas = ["Cód. Alumno", "No. Documento", "Tipo de Documento", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "Curso", "Cód. Acudiente", "Estado" ];
+        $arrColumnas = ["Cód. Alumno", "No. Documento", "Tipo de Documento", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "Cód. Acudiente", "Estado" ];
         $htmltable = "<thead>";
         $htmltable .= "<tr>";
 
@@ -153,33 +153,6 @@ class estudianteController
             $htmltable .= "<td>".$objEstudiante->getEmail()."</td>";
             $htmltable .= "<td>".$objEstudiante->getCelular()."</td>";
             $htmltable .= "<td>".$objEstudiante->getDireccion()."</td>";
-
-            if ($objEstudiante->getIdCurso() == "1"){
-                $htmltable .= "<td>"."Primero"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "2"){
-                $htmltable .= "<td>"."Segundo"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "3"){
-                $htmltable .= "<td>"."Tercero"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "4"){
-                $htmltable .= "<td>"."Cuarto"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "5"){
-                $htmltable .= "<td>"."Quinto"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "6"){
-                $htmltable .= "<td>"."Sexto"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "7"){
-                $htmltable .= "<td>"."Septimo"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "8"){
-                $htmltable .= "<td>"."Octavo"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "9"){
-                $htmltable .= "<td>"."Noveno"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "10"){
-                $htmltable .= "<td>"."Decimo"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "11"){
-                $htmltable .= "<td>"."Once"."</td>";
-            }elseif ($objEstudiante->getIdCurso() == "12"){
-                $htmltable .= "<td>"."Preescolar"."</td>";
-            }
-
             $htmltable .= "<td>".$objEstudiante->getIdAcudiente()."</td>";
 
             /*if ($objEstudiante->getIdRol() == "7"){
