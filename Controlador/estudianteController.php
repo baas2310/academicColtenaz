@@ -218,9 +218,9 @@ class estudianteController
                         echo "El usuario se encuentra Inactivo";
                     }
                 }else if($respuesta == "Contraseña Incorrecta"){
-                    echo "La Contraseña No Coincide Con El Usuario";
-                }else if($respuesta == "No existe el usuario"){
-                    echo "No Existe Un Usuario Con Estos Datos";
+                    echo "La Contraseña No Coincide Con El Estudiante";
+                }else if($respuesta == "No existe el Estudiante"){
+                    echo "No Existe Un Estudiante Con Estos Datos";
                 }
             }else{
                 echo "Datos Vacios";

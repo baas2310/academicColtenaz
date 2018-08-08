@@ -37,3 +37,16 @@ querry para cargar los datos del estudiante con su acudiente
 
 SELECT U.Documento,U.TipoDocumento,U.Apellidos,U.Nombres,U.Email,U.Celular,U.Direccion,Curso,CONCAT(usuario.Documento,'-',usuario.Nombres,' ',usuario.Apellidos) as Acudiente,Rol,U.Estado  FROM usuario U INNER JOIN rol R on U.idRol = R.idRol INNER JOIN usuario on usuario.idUsuario=U.idAcudiente INNER JOIN curso C on U.idCurso = C.idCurso
 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+querry insertar o asignar a un docente
+
+INSERT INTO `asignaciondocente` (`idAsignacionDocente`, `Year`, `idUsuario`, `idCurso`, `idMateria`) VALUES (NULL, '2019', '5', '20', '2');
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+querry para cargar la informacion de la asignacion del docente
+
+SELECT AD.idAsignacionDocente, AD.Year, CONCAT('Cód: ',U.idUsuario, ' - ',U.Documento,' - ',U.Nombres,' ',U.Apellidos, ' - Celular: ',U.Celular) as idUsuario, C.Curso as idCurso, M.Materia as idMateria FROM asignaciondocente AD LEFT OUTER JOIN usuario U on AD.idUsuario = U.idUsuario LEFT OUTER JOIN curso C on AD.idCurso = C.idCurso LEFT OUTER JOIN materia M on AD.idMateria = M.idMateria
+
+

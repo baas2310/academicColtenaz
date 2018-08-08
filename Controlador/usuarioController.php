@@ -113,7 +113,7 @@ class usuarioController
 
         if (count($arrUsuarios) > 0){
             foreach ($arrUsuarios as $usuario)
-                $htmlSelect .= "<option value='".$usuario->getIdUsuario()."'>".$usuario->getApellidos()." ".$usuario->getNombres()."</option>";
+                $htmlSelect .= "<option value='".$usuario->getIdUsuario()."'>"."Cód: ".$usuario->getIdUsuario()." - No.Documento: ".$usuario->getDocumento()." - ".$usuario->getApellidos()." ".$usuario->getNombres()." - Celular: ".$usuario->getCelular()."</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

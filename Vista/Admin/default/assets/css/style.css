@@ -60,7 +60,7 @@ File: Main Css
 }
 
 .topbar .topbar-left {
-  background: #313a46;
+  background: #000000;
   float: left;
   text-align: center;
   height: 70px;
@@ -78,7 +78,7 @@ File: Main Css
 }
 
 .navbar-custom {
-  background-color: #64c5b1;
+  background-color: #00b90c;
   border-radius: 0;
   margin-bottom: 0;
   padding: 0 10px;
@@ -155,7 +155,7 @@ File: Main Css
 .side-menu {
   width: 240px;
   z-index: 10;
-  background: #343c49;
+  background: #252525;
   bottom: 0;
   margin-top: 0;
   padding-bottom: 30px;
@@ -187,7 +187,7 @@ File: Main Css
   display: inline-block;
   height: 70px;
   width: 60px;
-  background-color: #64c5b1;
+  background-color: #00b90c;
   font-size: 16px;
 }
 
@@ -565,7 +565,7 @@ body.enlarged.bg-transparent {
 
 .notification-list .noti-title {
   border-radius: 0.25rem 0.25rem 0 0;
-  background-color: #64c5b1;
+  background-color: #9b0600;
   margin: -6px -1px 0px -1px;
   width: auto;
   padding: 12px 20px;

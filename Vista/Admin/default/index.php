@@ -4,6 +4,7 @@ session_start();
 if (empty($_SESSION["DataUser"]["idRol"])){
     header("Location: login.php");
 }
+
 $_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
 ?>
 <!DOCTYPE html>
