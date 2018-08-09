@@ -47,6 +47,17 @@ INSERT INTO `asignaciondocente` (`idAsignacionDocente`, `Year`, `idUsuario`, `id
 
 querry para cargar la informacion de la asignacion del docente
 
-SELECT AD.idAsignacionDocente, AD.Year, CONCAT('Cód: ',U.idUsuario, ' - ',U.Documento,' - ',U.Nombres,' ',U.Apellidos, ' - Celular: ',U.Celular) as idUsuario, C.Curso as idCurso, M.Materia as idMateria FROM asignaciondocente AD LEFT OUTER JOIN usuario U on AD.idUsuario = U.idUsuario LEFT OUTER JOIN curso C on AD.idCurso = C.idCurso LEFT OUTER JOIN materia M on AD.idMateria = M.idMateria
+SELECT AD.idAsignacionDocente, AD.Year, CONCAT('Cód: ',U.idUsuario, ' - No.Documento: ',U.Documento,' - ',U.Nombres,' ',U.Apellidos, ' - Celular: ',U.Celular) as idUsuario, 
+                                        C.Curso as idCurso, M.Materia as idMateria FROM asignaciondocente AD 
+                                        LEFT OUTER JOIN usuario U on AD.idUsuario = U.idUsuario 
+                                        LEFT OUTER JOIN curso C on AD.idCurso = C.idCurso 
+                                        LEFT OUTER JOIN materia M on AD.idMateria = M.idMateria
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+querry para cargar la informacion de la asignacion o registro del estudiante
+
+SELECT R.idRegistro,R.Year, CONCAT('Cód: ',E.idEstudiante, ' - No.Documento: ',E.Documento,' - ',E.Nombres,' ',E.Apellidos, ' - Celular: ',E.Celular) as idEstudiante,C.Curso as idCurso FROM registro R 
+                                        LEFT OUTER JOIN estudiante E on r.idEstudiante = E.idEstudiante 
+                                        LEFT OUTER JOIN curso C on R.idCurso = C.idCurso

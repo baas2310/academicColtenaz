@@ -2,7 +2,7 @@
 
 session_start();
 
-require "../../../Modelo/asignarDocente.php";
+require "../../../Modelo/registro.php";
 
 if (empty($_SESSION["DataUser"]["idRol"])){
     header("Location: login.php");
@@ -18,17 +18,16 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Asignación de Docentes</title>
+    <title>Asignación de Alumnos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Controlador Necesario -->
-    <?php require "../../../Controlador/asignarDocenteController.php" ?>
+    <?php require "../../../Controlador/registroController.php" ?>
     <?php require "../../../Controlador/cursoController.php" ?>
-    <?php require "../../../Controlador/materiaController.php" ?>
-    <?php require "../../../Controlador/usuarioController.php" ?>
+    <?php require "../../../Controlador/estudianteController.php" ?>
 
     <?php include ("Includes/imports.php")?>
 
@@ -65,7 +64,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                             <ol class="breadcrumb float-right">
                                 <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
                                 <li class="breadcrumb-item"><a href="#">Administración</a></li>
-                                <li class="breadcrumb-item active">Asignación Docente</li>
+                                <li class="breadcrumb-item active">Asignación Alumno</li>
                             </ol>
 
                             <div class="clearfix"></div>
@@ -79,12 +78,12 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                     <div class="col-md-12">
                         <div class="card-box">
-                            <h4 class="text-center text-custom"><strong>ASIGNACIÓN DE DOCENTES</strong></h4>
+                            <h4 class="text-center text-custom"><strong>ASIGNACIÓN DE ALUMNOS</strong></h4>
                             <p class="text-muted m-b-30 font-13" align="center">
-                                Aquí usted puede Asignar los Docentes de acuerdo a la Asignatura o Materia que van a dictar dentro del plantel educativo.
+                                Aquí usted puede Asignar los Alumnos o Estudiantes de acuerdo al Grado que van a cursar dentro del plantel educativo.
                             </p>
 
-                            <form role="form" method="post" action="../../../Controlador/asignarDocenteController.php?action=crear">
+                            <form role="form" method="post" action="../../../Controlador/registroController.php?action=crear">
                                 <div class="row m-t-20">
                                     <div class="col-sm-6">
                                         <div class="form-group">
@@ -94,7 +93,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="Curso"><span class="text-danger">*</span> Curso o Grado al que Dicta:</label>
+                                            <label for="Curso"><span class="text-danger">*</span> Curso o Grado:</label>
                                             <?php echo cursoController::selectCursos(true, "idCurso", "idCurso", "form-control"); ?>
                                         </div>
 
@@ -103,13 +102,8 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                     <div class="col-sm-6">
 
                                         <div class="form-group">
-                                            <label for="Usuairo"><span class="text-danger">*</span> Datos del Docente:</label>
-                                            <?php echo usuarioController::selectUsuarios(true, "idUsuario", "idUsuario", "form-control"); ?>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="Materia"><span class="text-danger">*</span> Asignatura o Materia que Dicta:</label>
-                                            <?php echo materiaController::selectMaterias(true, "idMateria", "idMateria", "form-control"); ?>
+                                            <label for="Usuairo"><span class="text-danger">*</span> Datos de Alumno:</label>
+                                            <?php echo estudianteController::selectEstudiantes(true, "idEstudiante", "idEstudiante", "form-control"); ?>
                                         </div>
 
                                     </div>
@@ -131,15 +125,15 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                 <div class="row">
                     <div class="col-12">
                         <div class="card-box">
-                            <h4 class="text-center text-custom"><strong>LISTA DE DOCENTES ASIGNADOS</strong></h4>
+                            <h4 class="text-center text-custom"><strong>LISTA DE ALUMNOS ASIGNADOS</strong></h4>
                             <p class="text-muted m-b-30 font-13" align="center">
-                                Aquí usted puede ver la lista de Docentes Registrados y asignados en el sistema.
+                                Aquí usted puede ver la lista de Alumnoss Registrados y asignados en el sistema.
                             </p>
 
                             <div class="panel-body">
                                 <table class="table table-hover m-0 table-colored-bordered table-bordered-inverse tickets-list table-actions-bar dt-responsive nowrap" cellspacing="0" width="100%" id="datatable">
 
-                                    <?php echo asignarDocenteController::adminTableDocente(); ?>
+                                    <?php echo registroController::adminTableRegistro(); ?>
 
                                 </table>
                             </div>
