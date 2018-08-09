@@ -88,7 +88,7 @@ class cursoController
     static public function selectCursos($isRequired = true, $id = "idCurso", $nombre = "idCurso", $class = ""){
 
         $arrCursos = Curso::getAll();
-        $htmlSelect = "<select ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
+        $htmlSelect = "<select class=\"form-control\" ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
         $htmlSelect .= "<option >Seleccione</option>";
 
         if (count($arrCursos) > 0){

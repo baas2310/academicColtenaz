@@ -117,7 +117,7 @@ class estudianteController
 
         if (count($arrEstudiantes) > 0){
             foreach ($arrEstudiantes as $estudiante)
-                $htmlSelect .= "<option value='".$estudiante->getIdEstudiante()."'>"."Cód: ".$estudiante->getIdEstudiante()." - No.Documento: ".$estudiante->getDocumento()." - ".$estudiante->getApellidos()." ".$estudiante->getNombres()." - Celular: ".$estudiante->getCelular()."</option>";
+                $htmlSelect .= "<option value='".$estudiante->getIdEstudiante()."'>".$estudiante->getDocumento()." - ".$estudiante->getApellidos()." ".$estudiante->getNombres()." - Celular: ".$estudiante->getCelular()." - Cód: ".$estudiante->getIdEstudiante()."</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

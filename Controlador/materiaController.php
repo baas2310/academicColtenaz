@@ -88,7 +88,7 @@ class materiaController
     static public function selectMaterias($isRequired = true, $id = "idMateria", $nombre = "idMateria", $class = ""){
 
         $arrMaterias = Materia::getAll();
-        $htmlSelect = "<select ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
+        $htmlSelect = "<select class=\"form-control\" ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
         $htmlSelect .= "<option >Seleccione</option>";
 
         if (count($arrMaterias) > 0){

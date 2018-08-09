@@ -108,12 +108,12 @@ class usuarioController
     static public function selectUsuarios($isRequired = true, $id = "idUsuario", $nombre = "idUsuario", $class = ""){
 
         $arrUsuarios = Usuario::getAll();
-        $htmlSelect = "<select ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
+        $htmlSelect = "<select class=\"form-control\" ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
         $htmlSelect .= "<option >Seleccione</option>";
 
         if (count($arrUsuarios) > 0){
             foreach ($arrUsuarios as $usuario)
-                $htmlSelect .= "<option value='".$usuario->getIdUsuario()."'>"."Cód: ".$usuario->getIdUsuario()." - No.Documento: ".$usuario->getDocumento()." - ".$usuario->getApellidos()." ".$usuario->getNombres()." - Celular: ".$usuario->getCelular()."</option>";
+                $htmlSelect .= "<option value='".$usuario->getIdUsuario()."'>".$usuario->getDocumento()." - ".$usuario->getApellidos()." ".$usuario->getNombres()." - Celular: ".$usuario->getCelular()." - Cód: ".$usuario->getIdUsuario()."</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;
