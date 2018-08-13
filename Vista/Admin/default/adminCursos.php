@@ -83,7 +83,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                             <form role="form" method="post" action="../../../Controlador/cursoController.php?action=crear">
                                 <div class="row m-t-20">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="Curso">Curso o Grado a Registrar:</label>
                                             <input type="text" class="form-control" id="Curso" name="Curso"
@@ -93,7 +93,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <div class="form-group">
+                                        <div class="form-group" style="display: none">
                                             <label for="Estado"><span class="text-danger">*</span> Estado</label>
                                             <select class="form-control" id="Estado" required name="Estado">
                                                 <option>Activo</option>
@@ -102,7 +102,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <button type="submit" class="btn btn-primary stepy-finish" value="validate"   style= "border-radius: 5px">
                                             <i class="fa fa-check-square-o"></i><strong>&nbspRegistrar</strong>
                                         </button>

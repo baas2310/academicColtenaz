@@ -1,6 +1,6 @@
 <?php
 if ($_SESSION["user"] == "1"){
-    $_SESSION["name"]= "Rector";
+    $_SESSION["name"]= "Rector(a)";
 }else if ($_SESSION["user"] == "2"){
     $_SESSION["name"]= "Psicorientador(a)";
 }else if ($_SESSION["user"] == "3"){

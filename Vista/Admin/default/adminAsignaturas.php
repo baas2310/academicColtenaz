@@ -83,31 +83,32 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                             <form role="form" method="post" action="../../../Controlador/materiaController.php?action=crear">
                                 <div class="row m-t-20">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="Curso">Asignatura o Materia a Registrar:</label>
-                                            <input type="text" class="form-control" id="Materia" name="Materia"
-                                                   required placeholder="Ingrese la nueva asignatura">
+                                    <div class="col-12">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="Curso">Asignatura o Materia a Registrar:</label>
+                                                <input type="text" class="form-control" id="Materia" name="Materia"
+                                                       required placeholder="Ingrese la nueva asignatura">
+                                            </div>
+
                                         </div>
 
-                                    </div>
+                                        <div class="col-sm-6" style="display: none">
+                                            <div class="form-group">
+                                                <label for="Estado"><span class="text-danger">*</span> Estado</label>
+                                                <select class="form-control" id="Estado" required name="Estado">
+                                                    <option>Activo</option>
+                                                    <option>Inactivo</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="Estado"><span class="text-danger">*</span> Estado</label>
-                                            <select class="form-control" id="Estado" required name="Estado">
-                                                <option>Activo</option>
-                                                <option>Inactivo</option>
-                                            </select>
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-primary stepy-finish" value="validate"   style= "border-radius: 5px">
+                                                <i class="fa fa-check-square-o"></i><strong>&nbspRegistrar</strong>
+                                            </button>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-primary stepy-finish" value="validate"   style= "border-radius: 5px">
-                                            <i class="fa fa-check-square-o"></i><strong>&nbspRegistrar</strong>
-                                        </button>
-                                    </div>
-
                                 </div>
                             </form>
 
