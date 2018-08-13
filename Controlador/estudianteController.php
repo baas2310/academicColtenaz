@@ -49,7 +49,6 @@ class estudianteController
             $arrayEstudiante['Celular'] = $_POST['Celular'];
             $arrayEstudiante['Direccion'] = $_POST['Direccion'];
             $arrayEstudiante['Estado'] = $_POST['Estado'];
-            $arrayEstudiante['idCurso'] = $_POST['idCurso'];
             $arrayEstudiante['idAcudiente'] = $_POST['idAcudiente'];
             $arrayEstudiante['idRol'] = $_POST['idRol'];
 
@@ -87,7 +86,6 @@ class estudianteController
             $arrayEstudiante['Celular'] = $_POST['Celular'];
             $arrayEstudiante['Direccion'] = $_POST['Direccion'];
             $arrayEstudiante['Estado'] = $Estado;
-            $arrayEstudiante['idCurso'] = $_POST['idCurso'];
             $arrayEstudiante['idAcudiente'] = $_POST['idAcudiente'];
             $arrayEstudiante['idRol'] = $_POST['idRol'];
             $arrayEstudiante['idEstudiante'] = $_SESSION['IdEstudiante'];
@@ -111,7 +109,7 @@ class estudianteController
 
     static public function selectEstudiantes($isRequired = true, $id = "idEstudiante", $nombre = "idEstudiante", $class = ""){
 
-        $arrEstudiantes = Estudiante::getAll();
+        $arrEstudiantes = Estudiante::getAllEstudiante();
         $htmlSelect = "<select ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
         $htmlSelect .= "<option >Seleccione</option>";
 
@@ -128,13 +126,13 @@ class estudianteController
 
         $arrEstudiantes = Estudiante::getAll();
         $tmpEstudiantes = new Estudiante();
-        $arrColumnas = ["Cód. Alumno", "No. Documento", "Tipo de Documento", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "Cód. Acudiente", "Estado" ];
+        $arrColumnas = ["Cód. Alumno", "No. Documento", "Tipo de Documento", "Apellidos", "Nombres", "Email", "Celular", "Direccion", "Datos del Acudiente", "Estado" ];
         $htmltable = "<thead>";
         $htmltable .= "<tr>";
 
         foreach ($arrColumnas as $NameColumna){
 
-            $htmltable .= "<th>".$NameColumna."</th>";
+            $htmltable .= "<th style='text-align: center'>".$NameColumna."</th>";
 
         }
         $htmltable .= "<th style='text-align: center'>Acciones</th>";

@@ -297,7 +297,12 @@ class estudiante extends db_abstract_class
 
     public static function getAll()
     {
-        return Estudiante::buscar("SELECT * FROM estudiante ");
+        return Estudiante::buscar("SELECT E.idEstudiante,E.Documento,E.TipoDocumento,E.Apellidos,E.Nombres,E.Email,E.Password,E.Celular,E.Direccion,E.Estado,CONCAT('Cód: ',U.idUsuario, ' - No.Documento: ',U.Documento,' - ',U.Nombres,' ',U.Apellidos, ' - Celular: ',U.Celular) as idAcudiente,E.idRol FROM estudiante E INNER JOIN usuario U on E.idAcudiente = U.idUsuario ");
+    }
+
+    public static function getAllEstudiante()
+    {
+        return Estudiante::buscar("SELECT E.idEstudiante,E.Documento,E.TipoDocumento,E.Apellidos,E.Nombres,E.Email,E.Password,E.Celular,E.Direccion,E.Estado,CONCAT('Cód: ',U.idUsuario, ' - No.Documento: ',U.Documento,' - ',U.Nombres,' ',U.Apellidos, ' - Celular: ',U.Celular) as idAcudiente,E.idRol FROM estudiante E INNER JOIN usuario U on E.idAcudiente = U.idUsuario WHERE E.Estado = 'Activo'");
     }
 
     public function insertar()

@@ -282,6 +282,16 @@ class usuario extends db_abstract_class
         return Usuario::buscar("SELECT * FROM usuario ");
     }
 
+    public static function getAllAcudientes()
+    {
+        return Usuario::buscar("SELECT * FROM usuario WHERE idRol = 6 AND Estado = 'Activo' ");
+    }
+
+    public static function getAllDocentes()
+    {
+        return Usuario::buscar("SELECT * FROM usuario WHERE idRol = 5 AND Estado = 'Activo' ");
+    }
+
     public function insertar()
     {
 

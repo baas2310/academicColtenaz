@@ -125,7 +125,7 @@ class registro extends db_abstract_class
     public static function getAll()
     {
         return registro::buscar("SELECT R.idRegistro,R.Year, CONCAT('Cód: ',E.idEstudiante, ' - No.Documento: ',E.Documento,' - ',E.Nombres,' ',E.Apellidos, ' - Celular: ',E.Celular) as idEstudiante,C.Curso as idCurso FROM registro R 
-                                            LEFT OUTER JOIN estudiante E on r.idEstudiante = E.idEstudiante 
+                                            LEFT OUTER JOIN estudiante E on R.idEstudiante = E.idEstudiante 
                                             LEFT OUTER JOIN curso C on R.idCurso = C.idCurso ");
     }
 

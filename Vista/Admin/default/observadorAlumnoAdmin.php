@@ -1,12 +1,29 @@
+<?php
+
+session_start();
+
+if (empty($_SESSION["DataUser"]["idRol"])){
+    header("Location: login.php");
+}
+$_SESSION["user"]=$_SESSION["DataUser"]["idRol"];
+
+if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != "3" && $_SESSION["user"] != "4"){
+    header('Location: Index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Administrar Cursos</title>
+    <title>Observador del Alumno</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Controlador Necesario -->
+    <?php require "../../../Controlador/cursoController.php" ?>
 
     <?php include ("Includes/imports.php")?>
 
@@ -57,10 +74,27 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title" align="center">Observador del Alumno</h4>
+                            <h4 class="text-center text-custom"><strong>OBSERVADOR DEL ALUMNO</strong></h4>
                             <p class="text-muted m-b-30 font-13" align="center">
                                 Aquí usted puede ver el Observador del Alumno y realizar el debido Proceso.
                             </p>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card-box">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="p-20">
+                                                    <div class="form-group">
+                                                        <label for="Curso">Seleccione el Curso o Grado al cual va a realizar la Observación:</label>
+                                                        <?php echo cursoController::selectCursos(true, "idCurso", "idCurso", "form-control"); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-12">

@@ -182,7 +182,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                                             <div class="row">
 
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-6" style="display: none">
                                                     <label for="idAcudiente"><strong>Código del Acudiente</strong><span class="text-danger">*</span></label>
                                                     <input type="text" value="<?php echo $objEstudiante->getIdAcudiente(); ?>" name="idAcudiente" parsley-trigger="change" required
                                                            placeholder="Datos del Acudiente" class="form-control" id="idAcudiente" >

@@ -104,7 +104,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                                         <div class="form-group">
                                             <label for="Usuairo"><span class="text-danger">*</span> Datos del Docente:</label>
-                                            <?php echo usuarioController::selectUsuarios(true, "idUsuario", "idUsuario", "form-control"); ?>
+                                            <?php echo usuarioController::selectUsuariosDocentes(true, "idUsuario", "idUsuario", "form-control"); ?>
                                         </div>
 
                                         <div class="form-group">

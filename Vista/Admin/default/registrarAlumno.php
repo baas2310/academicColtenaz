@@ -24,6 +24,9 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- Controlador Necesario -->
+    <?php require "../../../Controlador/usuarioController.php" ?>
+
     <?php include("Includes/imports.php") ?>
 
 </head>
@@ -161,7 +164,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                                        placeholder="Calle xx No. xx - xx" parsley-trigger="change" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group" style="display: none">
                                                 <label for="Cargo"><span class="text-danger">*</span> Cargo o Rol</label>
                                                 <select class="form-control" id="idRol" required name="idRol">
                                                     <option value="7">Estudiante</option>
@@ -175,7 +178,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="form-group">
+                                            <div class="form-group" style="display: none">
                                                 <label for="Estado"><span class="text-danger">*</span> Estado</label>
                                                 <select class="form-control" id="Estado" required name="Estado">
                                                     <option>Activo</option>
@@ -184,10 +187,12 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Acudiente"><span class="text-danger">*</span> Código del Acudiente</label>
+                                                <label for="Acudiente"><span class="text-danger">*</span> Código y Datos del Acudiente:</label>
+                                                <?php echo usuarioController::selectUsuariosAcudientes(true, "idUsuario", "idUsuario", "form-control"); ?>
+                                                <!--<label for="Acudiente"><span class="text-danger">*</span> Código del Acudiente</label>
                                                 <input type="text" class="form-control" id="idAcudiante" name="idAcudiente"
                                                        placeholder="Ingrese aquí el código del Acudiente"
-                                                       parsley-trigger="change" >
+                                                       parsley-trigger="change" >-->
                                             </div>
 
                                             <div class="form-group">

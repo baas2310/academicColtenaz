@@ -4,7 +4,7 @@ require_once('db_abstract_class.php');
 
 class estudiante extends db_abstract_class
 {
-    private $idUsuario;
+    private $idEstudiante;
     private $Documento;
     private $TipoDocumento;
     private $Apellidos;
@@ -14,7 +14,6 @@ class estudiante extends db_abstract_class
     private $Celular;
     private $Direccion;
     private $Estado;
-    private $idCurso;
     private $idAcudiente;
     private $idRol;
 
@@ -28,7 +27,7 @@ class estudiante extends db_abstract_class
                 $this->$campo = $valor;
             }
         }else{
-            $this->idUsuario = "";
+            $this->idEstudiante = "";
             $this->Documento = "";
             $this->TipoDocumento = "";
             $this->Apellidos = "";
@@ -38,7 +37,6 @@ class estudiante extends db_abstract_class
             $this->Celular = "";
             $this->Direccion = "";
             $this->Estado = "";
-            $this->idCurso = "";
             $this->idAcudiente = "";
             $this->idRol = "";
 
@@ -54,23 +52,23 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getIdUsuario()
+    public function getIdEstudiante()
     {
-        return $this->idUsuario;
+        return $this->idEstudiante;
     }
 
     /**
-     * @param mixed $idUsuario
+     * @param string $idEstudiante
      */
-    public function setIdUsuario($idUsuario)
+    public function setIdEstudiante($idEstudiante)
     {
-        $this->idUsuario = $idUsuario;
+        $this->idEstudiante = $idEstudiante;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDocumento()
     {
@@ -78,7 +76,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Documento
+     * @param string $Documento
      */
     public function setDocumento($Documento)
     {
@@ -86,7 +84,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTipoDocumento()
     {
@@ -94,7 +92,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $TipoDocumento
+     * @param string $TipoDocumento
      */
     public function setTipoDocumento($TipoDocumento)
     {
@@ -102,7 +100,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getApellidos()
     {
@@ -110,7 +108,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Apellidos
+     * @param string $Apellidos
      */
     public function setApellidos($Apellidos)
     {
@@ -118,7 +116,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getNombres()
     {
@@ -126,7 +124,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Nombres
+     * @param string $Nombres
      */
     public function setNombres($Nombres)
     {
@@ -134,7 +132,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEmail()
     {
@@ -142,7 +140,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Email
+     * @param string $Email
      */
     public function setEmail($Email)
     {
@@ -150,7 +148,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPassword()
     {
@@ -158,7 +156,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Password
+     * @param string $Password
      */
     public function setPassword($Password)
     {
@@ -166,7 +164,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCelular()
     {
@@ -174,7 +172,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Celular
+     * @param string $Celular
      */
     public function setCelular($Celular)
     {
@@ -182,7 +180,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDireccion()
     {
@@ -190,7 +188,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Direccion
+     * @param string $Direccion
      */
     public function setDireccion($Direccion)
     {
@@ -198,7 +196,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEstado()
     {
@@ -206,7 +204,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $Estado
+     * @param string $Estado
      */
     public function setEstado($Estado)
     {
@@ -214,23 +212,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
-     */
-    public function getIdCurso()
-    {
-        return $this->idCurso;
-    }
-
-    /**
-     * @param mixed $idCurso
-     */
-    public function setIdCurso($idCurso)
-    {
-        $this->idCurso = $idCurso;
-    }
-
-    /**
-     * @return mixed
+     * @return string
      */
     public function getIdAcudiente()
     {
@@ -238,7 +220,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $idAcudiente
+     * @param string $idAcudiente
      */
     public function setIdAcudiente($idAcudiente)
     {
@@ -246,7 +228,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getIdRol()
     {
@@ -254,7 +236,7 @@ class estudiante extends db_abstract_class
     }
 
     /**
-     * @param mixed $idRol
+     * @param string $idRol
      */
     public function setIdRol($idRol)
     {
@@ -266,7 +248,7 @@ class estudiante extends db_abstract_class
         $estudiante = new Estudiante();
         if ($id  > 0){
             $getRow = $estudiante->getRow("SELECT * FROM estudiante WHERE idEstudiante =?", array($id));
-            $estudiante->idUsuario = $getRow['idUsuario'];
+            $estudiante->idEstudiante = $getRow['idEstudiante'];
             $estudiante->Documento = $getRow['Documento'];
             $estudiante->TipoDocumento = $getRow['TipoDocumento'];
             $estudiante->Apellidos = $getRow['Apellidos'];
@@ -276,8 +258,7 @@ class estudiante extends db_abstract_class
             $estudiante->Celular = $getRow['Celular'];
             $estudiante->Direccion = $getRow['Direccion'];
             $estudiante->Estado = $getRow['Estado'];
-            $estudiante->idCurso = $getRow['idRol'];
-            $estudiante->idAcudiente = $getRow['idRol'];
+            $estudiante->idAcudiente = $getRow['idAcudiente'];
             $estudiante->idRol = $getRow['idRol'];
 
             $estudiante->Disconnect();
@@ -295,7 +276,7 @@ class estudiante extends db_abstract_class
 
         foreach ($getRows as $valor){
             $estudiante = new Estudiante();
-            $estudiante->idUsuario = $valor['idUsuario'];
+            $estudiante->idEstudiante = $valor['idEstudiante'];
             $estudiante->Documento = $valor['Documento'];
             $estudiante->TipoDocumento = $valor['TipoDocumento'];
             $estudiante->Apellidos = $valor['Apellidos'];
@@ -305,8 +286,7 @@ class estudiante extends db_abstract_class
             $estudiante->Celular = $valor['Celular'];
             $estudiante->Direccion = $valor['Direccion'];
             $estudiante->Estado = $valor['Estado'];
-            $estudiante->idCurso = $valor['idRol'];
-            $estudiante->idAcudiente = $valor['idRol'];
+            $estudiante->idAcudiente = $valor['idAcudiente'];
             $estudiante->idRol = $valor['idRol'];
 
             array_push($arrayEst, $estudiante);
@@ -320,11 +300,16 @@ class estudiante extends db_abstract_class
         return Estudiante::buscar("SELECT * FROM estudiante ");
     }
 
+    public static function getAllDatosAcudiente()
+    {
+        return Estudiante::buscar("SELECT E.idEstudiante,E.Documento,E.TipoDocumento,E.Apellidos,E.Nombres,E.Email,E.Password,E.Celular,E.Direccion,E.Estado,CONCAT('Cód: ',U.idUsuario, ' - No.Documento: ',U.Documento,' - ',U.Nombres,' ',U.Apellidos, ' - Celular: ',U.Celular) as idAcudiente,E.idRol FROM estudiante E INNER JOIN usuario U on E.idAcudiente = U.idUsuario ");
+    }
+
     public function insertar()
     {
 
 
-        $this->insertRow("INSERT INTO estudiante VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
+        $this->insertRow("INSERT INTO estudiante VALUE ( NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -335,7 +320,6 @@ class estudiante extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
-                $this->idCurso,
                 $this->idAcudiente,
                 $this->idRol
 
@@ -348,7 +332,7 @@ class estudiante extends db_abstract_class
     public function editar()
     {
         $arrUser = (array) $this;
-        $this->updateRow("UPDATE estudiante SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idCurso = ?, idAcudiente = ?, idRol = ? WHERE idEstudiante = ?", array(
+        $this->updateRow("UPDATE estudiante SET  Documento = ?, TipoDocumento = ?, Apellidos = ?, Nombres = ?, Email = ?, Password=?, Celular = ?, Direccion = ?,  Estado = ?, idAcudiente = ?, idRol = ? WHERE idEstudiante = ?", array(
 
                 $this->Documento,
                 $this->TipoDocumento,
@@ -359,7 +343,6 @@ class estudiante extends db_abstract_class
                 $this->Celular,
                 $this->Direccion,
                 $this->Estado,
-                $this->idCurso,
                 $this->idAcudiente,
                 $this->idRol,
                 $this->idEstudiante

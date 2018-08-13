@@ -61,7 +61,7 @@ class registroController
 
         foreach ($arrColumnas as $NameColumna){
 
-            $htmltable .= "<th>".$NameColumna."</th>";
+            $htmltable .= "<th style='text-align: center'>".$NameColumna."</th>";
 
         }
         $htmltable .= "</tr>";

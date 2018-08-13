@@ -120,6 +120,11 @@ class curso extends db_abstract_class
         return Curso::buscar("SELECT * FROM curso ");
     }
 
+    public static function getAllCursos()
+    {
+        return Curso::buscar("SELECT * FROM curso WHERE Estado = 'Activo' ");
+    }
+
     public function insertar()
     {
 

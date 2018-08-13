@@ -87,7 +87,7 @@ class materiaController
 
     static public function selectMaterias($isRequired = true, $id = "idMateria", $nombre = "idMateria", $class = ""){
 
-        $arrMaterias = Materia::getAll();
+        $arrMaterias = Materia::getAllMaterias();
         $htmlSelect = "<select class=\"form-control\" ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
         $htmlSelect .= "<option >Seleccione</option>";
 
@@ -110,7 +110,7 @@ class materiaController
 
         foreach ($arrColumnas as $NameColumna){
 
-            $htmltable .= "<th>".$NameColumna."</th>";
+            $htmltable .= "<th style='text-align: center'>".$NameColumna."</th>";
 
         }
         $htmltable .= "<th style='text-align: center'>Acciones</th>";

@@ -17,13 +17,18 @@ if (!empty($_SESSION['idRol'])){
 
     <?php include ("Includes/imports.php")?>
 
+
+
 </head>
 
 
 <body class="bg-accpunt-pages">
 
+
 <!-- HOME -->
-<section style="background-color: #4bd396">
+
+<section style="background-image: url('assets/images/login.jpg');background-size: cover;background-repeat: no-repeat;">
+
     <div class="container">
         <div class="row">
             <div class="col-sm-12">

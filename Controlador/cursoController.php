@@ -87,7 +87,7 @@ class cursoController
 
     static public function selectCursos($isRequired = true, $id = "idCurso", $nombre = "idCurso", $class = ""){
 
-        $arrCursos = Curso::getAll();
+        $arrCursos = Curso::getAllCursos();
         $htmlSelect = "<select class=\"form-control\" ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
         $htmlSelect .= "<option >Seleccione</option>";
 
@@ -110,7 +110,7 @@ class cursoController
 
         foreach ($arrColumnas as $NameColumna){
 
-            $htmltable .= "<th>".$NameColumna."</th>";
+            $htmltable .= "<th style='text-align: center'>".$NameColumna."</th>";
 
         }
         $htmltable .= "<th style='text-align: center'>Acciones</th>";

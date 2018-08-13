@@ -118,6 +118,11 @@ class materia extends db_abstract_class
         return Materia::buscar("SELECT * FROM materia ");
     }
 
+    public static function getAllMaterias()
+    {
+        return Materia::buscar("SELECT * FROM materia WHERE Estado = 'Activo' ");
+    }
+
     public function insertar()
     {
 

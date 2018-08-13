@@ -139,10 +139,16 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                                             </div>
 
                                             <div class="form-group">
+                                                <label for="Numero"><span class="text-danger">*</span> Número de Celular</label>
+                                                <input type="text" class="form-control" id="Celular" name="Celular"
+                                                       placeholder="3xx xxx xxxx" parsley-trigger="change" required>
+                                            </div>
+
+                                            <!--<div class="form-group">
                                                 <label for="ConfirmarEmail"><span class="text-danger">*</span> Confirmar Email</label>
                                                 <input type="email" class="form-control" id="Email2" required
                                                        placeholder="direccionEmail@dominio.com" data-parsley-equalto="#Email">
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
 
@@ -153,11 +159,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
                                     <div class="row m-t-20">
                                         <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="Numero"><span class="text-danger">*</span> Número de Celular</label>
-                                                <input type="text" class="form-control" id="Celular" name="Celular"
-                                                       placeholder="3xx xxx xxxx" parsley-trigger="change" required>
-                                            </div>
+
 
                                             <div class="form-group">
                                                 <label for="Direccion"><span class="text-danger">*</span> Dirección</label>
@@ -193,7 +195,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
 
 
                                         <div class="col-sm-6">
-                                            <div class="form-group">
+                                            <div class="form-group" style="display: none">
                                                 <label for="Estado"><span class="text-danger">*</span> Estado</label>
                                                 <select class="form-control" id="Estado" required name="Estado">
                                                     <option>Activo</option>

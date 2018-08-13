@@ -21,6 +21,10 @@ class usuarioController
             usuarioController::editar();
         }else if ($action=="selectUsuarios"){
             usuarioController::selectUsuarios();
+        }else if ($action=="selectUsuariosAcudientes"){
+            usuarioController::selectUsuariosAcudientes();
+        }else if ($action=="selectUsuariosDocentes"){
+            usuarioController::selectUsuariosDocentes();
         }else if ($action=="adminTableUsuario"){
             usuarioController::adminTableUsuario();
         }else if ($action=="inactivarUsuario"){
@@ -120,6 +124,36 @@ class usuarioController
 
     }
 
+    static public function selectUsuariosDocentes($isRequired = true, $id = "idUsuario", $nombre = "idUsuario", $class = ""){
+
+        $arrUsuarios = Usuario::getAllDocentes();
+        $htmlSelect = "<select class=\"form-control\" ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
+        $htmlSelect .= "<option >Seleccione</option>";
+
+        if (count($arrUsuarios) > 0){
+            foreach ($arrUsuarios as $usuario)
+                $htmlSelect .= "<option value='".$usuario->getIdUsuario()."'>".$usuario->getDocumento()." - ".$usuario->getApellidos()." ".$usuario->getNombres()." - Celular: ".$usuario->getCelular()." - Cód: ".$usuario->getIdUsuario()."</option>";
+        }
+        $htmlSelect .= "</select>";
+        return $htmlSelect;
+
+    }
+
+    static public function selectUsuariosAcudientes($isRequired = true, $id = "idUsuario", $nombre = "idUsuario", $class = ""){
+
+        $arrUsuarios = Usuario::getAllAcudientes();
+        $htmlSelect = "<select class=\"form-control\" id=\"idAcudiente\" required name=\"idAcudiente\" ".(($isRequired) ? "required" : "")."id= '".$id."' name='".$nombre."' class='".$class."'>";
+        $htmlSelect .= "<option>Seleccione</option>";
+
+        if (count($arrUsuarios) > 0){
+            foreach ($arrUsuarios as $usuario)
+                $htmlSelect .= "<option value='".$usuario->getIdUsuario()."'>".$usuario->getDocumento()." - ".$usuario->getApellidos()." ".$usuario->getNombres()." - Celular: ".$usuario->getCelular()." - Dirección: ".$usuario->getDireccion()." - Cód: ".$usuario->getIdUsuario()."</option>";
+        }
+        $htmlSelect .= "</select>";
+        return $htmlSelect;
+
+    }
+
     static public function adminTableUsuario(){
 
         $arrUsuarios = Usuario::getAll();
@@ -130,7 +164,7 @@ class usuarioController
 
         foreach ($arrColumnas as $NameColumna){
 
-            $htmltable .= "<th>".$NameColumna."</th>";
+            $htmltable .= "<th style='text-align: center'>".$NameColumna."</th>";
 
         }
         $htmltable .= "<th style='text-align: center'>Acciones</th>";
