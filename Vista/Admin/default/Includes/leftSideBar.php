@@ -33,7 +33,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="../default/adminTareas.php"><i class="icon-pencil"></i>Administrar Tareas</a></li>
                         <li><a href="#"><i class="icon-chart"></i>Administrar Notas</a></li>
-                        <li><a href="../default/observadorAlumnoAdmin.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
+                        <li><a href="../default/observadorAlumnoDocente.php"><i class="icon-book-open"></i>Observador del Alumno</a></li>
                         <li><a href="#"><i class="icon-share-alt"></i>Crear Anuncio</a></li>
                     </ul>
                 </li>

@@ -82,6 +82,15 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                             <p class="text-muted m-b-30 font-13" align="center">
                                 Aquí usted puede Asignar los Alumnos o Estudiantes de acuerdo al Grado que van a cursar dentro del plantel educativo.
                             </p>
+                            <div class="pad-btm form-inline">
+                                <div class="row">
+                                    <div class="col-sm-6 text-xs-center">
+                                        <div class="form-group">
+                                            <button onclick="location.href='registrarAlumno.php'" id="Registrar" class="btn btn-success m-b-20"><i class="fa fa-plus m-r-5"></i>Añadir Nuevo</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <form role="form" method="post" action="../../../Controlador/registroController.php?action=crear">
                                 <div class="row m-t-20">

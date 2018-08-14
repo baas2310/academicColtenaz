@@ -78,7 +78,7 @@ if($_SESSION["user"] != "1" && $_SESSION["user"] != "2" && $_SESSION["user"] != 
                         <div class="alert alert-icon alert-danger alert-dismissible fade show">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <i class="mdi mdi-block-helper"></i>
-                            No se pudo actualizar al Usuario.<strong>Error: no se encontro la informacion del Usuario.</strong> Puede administrar los Usuarios desde <a href="adminUsuarios.php" class="alert-link">Aquí</a>.
+                            No se pudo actualizar al Usuario.<strong> Error: no se encontro la informacion del Usuario.</strong> Puede administrar los Usuarios desde <a href="adminUsuarios.php" class="alert-link">Aquí</a>.
                         </div>
                     <?php }else{
                         $IdUsuario = $_GET["IdUsuario"];
